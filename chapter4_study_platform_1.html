@@ -1,0 +1,2108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 4 — Behaviourism & The Cognitive Paradigm | Study Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Base palette */
+  --bg: #0f0e0c;
+  --bg-elev: #161410;
+  --bg-card: #1a1814;
+  --bg-card-hover: #211e18;
+  --line: #2a2620;
+  --line-soft: #1f1c17;
+  --gold: #c9a96e;
+  --gold-bright: #e2c285;
+  --gold-dim: #8a7548;
+  --ink: #e8e4dc;
+  --ink-soft: #b9b3a4;
+  --ink-dim: #7a7466;
+
+  /* Branch colours — distinct but harmonious with the dark-academic base */
+  --b1: #b87a7a; --b1-soft: rgba(184,122,122,0.12); --b1-line: rgba(184,122,122,0.35);
+  --b2: #c9876a; --b2-soft: rgba(201,135,106,0.12); --b2-line: rgba(201,135,106,0.35);
+  --b3: #8a9a6e; --b3-soft: rgba(138,154,110,0.12); --b3-line: rgba(138,154,110,0.35);
+  --b4: #b86a5a; --b4-soft: rgba(184,106,90,0.12); --b4-line: rgba(184,106,90,0.35);
+  --b5: #6a9aa0; --b5-soft: rgba(106,154,160,0.12); --b5-line: rgba(106,154,160,0.35);
+  --b6: #9a7aa8; --b6-soft: rgba(154,122,168,0.12); --b6-line: rgba(154,122,168,0.35);
+  --b7: #d4b876; --b7-soft: rgba(212,184,118,0.12); --b7-line: rgba(212,184,118,0.35);
+
+  --display: 'Cormorant Garamond', 'Times New Roman', serif;
+  --body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(201,169,110,0.04), transparent 50%),
+    radial-gradient(ellipse at 80% 100%, rgba(184,122,122,0.03), transparent 50%);
+  background-attachment: fixed;
+}
+
+/* ───────── HEADER ───────── */
+header.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  background: rgba(15,14,12,0.85);
+  border-bottom: 1px solid var(--line);
+}
+.topbar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.brand {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--gold);
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  white-space: nowrap;
+}
+.brand-num {
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ink-soft);
+  font-size: 16px;
+}
+.brand-divider {
+  width: 1px;
+  height: 24px;
+  background: var(--line);
+  align-self: center;
+}
+.search-wrap {
+  flex: 1;
+  position: relative;
+  max-width: 420px;
+}
+.search-wrap input {
+  width: 100%;
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  padding: 10px 14px 10px 38px;
+  font-family: var(--body);
+  font-size: 13px;
+  border-radius: 2px;
+  letter-spacing: 0.01em;
+  transition: border-color 0.2s ease;
+}
+.search-wrap input:focus {
+  outline: none;
+  border-color: var(--gold-dim);
+}
+.search-wrap::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid var(--ink-dim);
+  border-radius: 50%;
+}
+.search-wrap::after {
+  content: "";
+  position: absolute;
+  left: 24px;
+  top: 22px;
+  width: 6px;
+  height: 1.5px;
+  background: var(--ink-dim);
+  transform: rotate(45deg);
+}
+nav.primary {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+}
+nav.primary a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+nav.primary a:hover {
+  color: var(--gold);
+  border-color: var(--line);
+}
+
+/* ───────── LAYOUT ───────── */
+main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 64px 32px 120px;
+}
+
+section { margin-bottom: 96px; }
+
+.section-label {
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.section-title {
+  font-family: var(--display);
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+.section-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+.section-subtitle {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--ink-soft);
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+
+/* ───────── HERO ───────── */
+.hero {
+  padding: 80px 0 40px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 96px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.hero-meta {
+  font-family: var(--body);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 24px;
+}
+.hero h1 {
+  font-family: var(--display);
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  margin-bottom: 28px;
+  color: var(--ink);
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 400;
+}
+.hero-lede {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  font-style: italic;
+  border-left: 1px solid var(--gold-dim);
+  padding-left: 24px;
+}
+
+/* ───────── BIG PICTURE BLOCKS ───────── */
+.big-picture {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 64px;
+}
+.bp-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  padding: 32px 28px;
+  position: relative;
+}
+.bp-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+}
+.bp-card .label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+.bp-card h3 {
+  font-family: var(--display);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+.bp-card p {
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* ───────── MIND MAP ───────── */
+.mindmap-wrap {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  padding: 40px 32px;
+  margin-bottom: 64px;
+  position: relative;
+  overflow: hidden;
+}
+.mindmap-wrap::before {
+  content: "MIND MAP";
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  color: var(--gold-dim);
+}
+.mindmap svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ───────── BRANCH FILTER PILLS ───────── */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+.filter-pill {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.filter-pill .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.filter-pill:hover { border-color: var(--gold-dim); color: var(--ink); }
+.filter-pill.active { background: var(--bg-card); border-color: var(--gold); color: var(--gold); }
+.filter-pill[data-branch="all"].active { color: var(--gold); }
+
+/* ───────── BRANCH SECTIONS ───────── */
+.branch {
+  margin-bottom: 80px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 96px;
+}
+.branch-header {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 20px;
+  margin-bottom: 32px;
+  align-items: start;
+}
+.branch-num {
+  font-family: var(--display);
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1;
+  font-style: italic;
+}
+.branch-title-block .label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.branch-title-block h2 {
+  font-family: var(--display);
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.branch-title-block .branch-bridge {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 17px;
+  color: var(--ink-soft);
+  font-weight: 300;
+  line-height: 1.5;
+  max-width: 760px;
+}
+
+/* Branch colour theming */
+.branch[data-branch="1"] .branch-num,
+.branch[data-branch="1"] .branch-title-block .label { color: var(--b1); }
+.branch[data-branch="1"] .concept-card { border-left-color: var(--b1); }
+.branch[data-branch="2"] .branch-num,
+.branch[data-branch="2"] .branch-title-block .label { color: var(--b2); }
+.branch[data-branch="2"] .concept-card { border-left-color: var(--b2); }
+.branch[data-branch="3"] .branch-num,
+.branch[data-branch="3"] .branch-title-block .label { color: var(--b3); }
+.branch[data-branch="3"] .concept-card { border-left-color: var(--b3); }
+.branch[data-branch="4"] .branch-num,
+.branch[data-branch="4"] .branch-title-block .label { color: var(--b4); }
+.branch[data-branch="4"] .concept-card { border-left-color: var(--b4); }
+.branch[data-branch="5"] .branch-num,
+.branch[data-branch="5"] .branch-title-block .label { color: var(--b5); }
+.branch[data-branch="5"] .concept-card { border-left-color: var(--b5); }
+.branch[data-branch="6"] .branch-num,
+.branch[data-branch="6"] .branch-title-block .label { color: var(--b6); }
+.branch[data-branch="6"] .concept-card { border-left-color: var(--b6); }
+.branch[data-branch="7"] .branch-num,
+.branch[data-branch="7"] .branch-title-block .label { color: var(--b7); }
+.branch[data-branch="7"] .concept-card { border-left-color: var(--b7); }
+
+/* Filter pill colour dots */
+.filter-pill[data-branch="1"] .dot { background: var(--b1); }
+.filter-pill[data-branch="2"] .dot { background: var(--b2); }
+.filter-pill[data-branch="3"] .dot { background: var(--b3); }
+.filter-pill[data-branch="4"] .dot { background: var(--b4); }
+.filter-pill[data-branch="5"] .dot { background: var(--b5); }
+.filter-pill[data-branch="6"] .dot { background: var(--b6); }
+.filter-pill[data-branch="7"] .dot { background: var(--b7); }
+.filter-pill[data-branch="all"] .dot { background: var(--gold); }
+
+.transition-prose {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 16px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  padding: 16px 0 24px 32px;
+  border-left: 1px solid var(--line);
+  margin: 24px 0 32px;
+  max-width: 860px;
+}
+
+/* ───────── CONCEPT CARDS ───────── */
+.concept-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold-dim);
+  margin-bottom: 12px;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.concept-card.hidden { display: none; }
+.concept-card.search-hidden { display: none; }
+.concept-card-head {
+  padding: 18px 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  user-select: none;
+}
+.concept-card-head:hover { background: var(--bg-card-hover); }
+.concept-num {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ink-dim);
+  min-width: 32px;
+  letter-spacing: 0.05em;
+}
+.concept-title {
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--ink);
+  flex: 1;
+  letter-spacing: -0.005em;
+}
+.concept-toggle {
+  width: 18px;
+  height: 18px;
+  position: relative;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+.concept-toggle::before,
+.concept-toggle::after {
+  content: "";
+  position: absolute;
+  background: var(--gold);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.concept-toggle::before { width: 12px; height: 1px; }
+.concept-toggle::after { width: 1px; height: 12px; transition: transform 0.3s ease; }
+.concept-card.open .concept-toggle::after { transform: translate(-50%, -50%) rotate(90deg); }
+
+.concept-card-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.concept-card.open .concept-card-body { max-height: 2400px; }
+.concept-inner {
+  padding: 0 24px 24px 72px;
+  display: grid;
+  gap: 18px;
+}
+.concept-block {
+  border-top: 1px solid var(--line-soft);
+  padding-top: 16px;
+}
+.concept-block:first-child { border-top: none; padding-top: 4px; }
+.concept-block .lbl {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+  display: block;
+}
+.concept-block p { color: var(--ink-soft); font-size: 14px; line-height: 1.7; }
+.concept-block .definition {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 17px;
+  color: var(--ink);
+  line-height: 1.5;
+}
+.exam-block {
+  background: rgba(201,169,110,0.04);
+  border: 1px solid var(--line);
+  padding: 18px 22px;
+  margin-top: 4px;
+}
+.exam-block .lbl { color: var(--gold-bright); }
+.exam-q {
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 12px;
+  font-style: italic;
+}
+.exam-a {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  border-left: 1px solid var(--gold-dim);
+  padding-left: 14px;
+}
+.exam-a strong { color: var(--gold-bright); font-weight: 600; }
+
+/* ───────── MISTAKES SECTION ───────── */
+.mistakes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.mistake-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  padding: 28px 26px;
+  position: relative;
+}
+.mistake-card .head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.mistake-card .marker {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 28px;
+  color: var(--b4);
+  line-height: 1;
+}
+.mistake-card h3 {
+  font-family: var(--display);
+  font-size: 21px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.25;
+}
+.mistake-card .why {
+  margin-bottom: 14px;
+}
+.mistake-card .lbl {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  display: block;
+}
+.mistake-card .why .lbl { color: var(--b4); }
+.mistake-card .correct .lbl { color: var(--b3); }
+.mistake-card p { color: var(--ink-soft); font-size: 14px; line-height: 1.65; }
+.mistake-card .correct {
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+
+/* ───────── TABLES ───────── */
+.table-wrap {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  padding: 28px;
+  margin-bottom: 28px;
+  overflow-x: auto;
+}
+.table-wrap h3 {
+  font-family: var(--display);
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--gold);
+  margin-bottom: 4px;
+  font-style: italic;
+}
+.table-wrap .table-sub {
+  font-size: 13px;
+  color: var(--ink-dim);
+  margin-bottom: 20px;
+}
+table.qref {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+table.qref th {
+  text-align: left;
+  font-family: var(--body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+table.qref td {
+  padding: 14px;
+  border-bottom: 1px solid var(--line-soft);
+  color: var(--ink-soft);
+  vertical-align: top;
+  line-height: 1.55;
+}
+table.qref tr:last-child td { border-bottom: none; }
+table.qref td:first-child {
+  font-family: var(--display);
+  font-size: 16px;
+  color: var(--ink);
+  font-weight: 500;
+  white-space: nowrap;
+  font-style: italic;
+}
+table.qref .col-marker {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+  transform: translateY(-1px);
+}
+
+/* ───────── CHECKLIST ───────── */
+.checklist-wrap {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  padding: 40px 36px;
+}
+.checklist-wrap h3 {
+  font-family: var(--display);
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--gold);
+  margin-bottom: 4px;
+  font-style: italic;
+}
+.checklist-wrap .sub {
+  font-size: 13px;
+  color: var(--ink-dim);
+  margin-bottom: 28px;
+}
+.check-group { margin-bottom: 24px; }
+.check-group h4 {
+  font-family: var(--body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+.check-list { list-style: none; }
+.check-list li {
+  padding: 9px 0 9px 32px;
+  position: relative;
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.55;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.15s ease;
+}
+.check-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 13px;
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--gold-dim);
+  border-radius: 1px;
+  transition: all 0.2s ease;
+}
+.check-list li.checked { color: var(--ink-dim); text-decoration: line-through; text-decoration-color: var(--gold-dim); }
+.check-list li.checked::before {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+.check-list li.checked::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 16px;
+  width: 7px;
+  height: 4px;
+  border-left: 1.5px solid var(--bg);
+  border-bottom: 1.5px solid var(--bg);
+  transform: rotate(-45deg);
+}
+
+/* ───────── FOOTER ───────── */
+footer {
+  text-align: center;
+  padding: 60px 32px 40px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-dim);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  font-family: var(--display);
+  font-style: italic;
+}
+
+/* ───────── CALLOUT BOX ───────── */
+.callout {
+  background: linear-gradient(180deg, rgba(201,169,110,0.05), transparent);
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--gold);
+  padding: 24px 28px;
+  margin: 32px 0;
+}
+.callout .lbl {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+  display: block;
+}
+.callout p {
+  font-family: var(--display);
+  font-size: 18px;
+  color: var(--ink);
+  line-height: 1.55;
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* ───────── RESPONSIVE ───────── */
+@media (max-width: 900px) {
+  .topbar-inner { flex-wrap: wrap; padding: 14px 20px; gap: 12px; }
+  .brand-divider { display: none; }
+  .search-wrap { order: 3; flex-basis: 100%; max-width: none; }
+  nav.primary { gap: 0; flex-wrap: wrap; }
+  nav.primary a { padding: 6px 8px; font-size: 11px; }
+  main { padding: 40px 20px 80px; }
+  .hero { grid-template-columns: 1fr; gap: 32px; padding: 40px 0; }
+  .hero h1 { font-size: 44px; }
+  .section-title { font-size: 32px; }
+  .big-picture { grid-template-columns: 1fr; }
+  .mistakes-grid { grid-template-columns: 1fr; }
+  .branch-header { grid-template-columns: 40px 1fr; }
+  .branch-num { font-size: 36px; }
+  .branch-title-block h2 { font-size: 26px; }
+  .concept-inner { padding-left: 24px; }
+}
+
+::selection { background: var(--gold); color: var(--bg); }
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--line); }
+::-webkit-scrollbar-thumb:hover { background: var(--gold-dim); }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <span class="brand-num">IV.</span>
+      Behaviourism &amp; Cognition
+    </div>
+    <div class="brand-divider"></div>
+    <div class="search-wrap">
+      <input type="text" id="searchBox" placeholder="Search concepts, definitions, examples…" autocomplete="off">
+    </div>
+    <nav class="primary">
+      <a href="#big-picture">Big Picture</a>
+      <a href="#mindmap">Map</a>
+      <a href="#concepts">Concepts</a>
+      <a href="#mistakes">Mistakes</a>
+      <a href="#tables">Tables</a>
+      <a href="#checklist">Checklist</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ═════════════ HERO ═════════════ -->
+<section class="hero">
+  <div>
+    <div class="hero-meta">Chapter 4 · Study Platform</div>
+    <h1>How do you <em>explain</em> and <em>control</em> behaviour?</h1>
+  </div>
+  <div class="hero-lede">
+    The rise of behaviourism and its replacement by the cognitive paradigm — a story of three rejections, two paradigms, and one stubborn question that psychology has never stopped asking.
+  </div>
+</section>
+
+<!-- ═════════════ BIG PICTURE ═════════════ -->
+<section id="big-picture">
+  <div class="section-label">§ 0 · The Big Picture</div>
+  <h2 class="section-title">What this chapter is <em>actually</em> about</h2>
+  <p class="section-subtitle">Three orientation points before we go in.</p>
+
+  <div class="big-picture">
+    <div class="bp-card">
+      <span class="label">Central Question</span>
+      <h3>Can psychology be a science of behaviour without invoking the mind?</h3>
+      <p>Behaviourism's answer was yes — for fifty years, mental content was banished from psychology. Cognitive psychology's answer was: only partly, and not for long.</p>
+    </div>
+    <div class="bp-card">
+      <span class="label">Why it matters</span>
+      <h3>Scientific status, real-world reach, and the methodology of mind</h3>
+      <p>Behaviourism converted public opinion to the view that psychology is a science. It also produced enduringly useful tools — reinforcement, conditioning, applied behaviour analysis — that still shape advertising, education, and clinical practice. The cognitive paradigm then re-opened the question of how mental content can itself be studied scientifically.</p>
+    </div>
+    <div class="bp-card">
+      <span class="label">Field connection</span>
+      <h3>Two metatheoretical assumptions, two paradigms, one continuous story</h3>
+      <p>Paradigms in psychology rest on untested metatheoretical assumptions. Behaviourism assumed humans are like animals and behaviour is controlled by its consequences. Cognitive psychology kept some of that and added information-processing — building on rather than replacing what came before.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="lbl">Reading lens</span>
+    <p>Behaviourism declined not because it was proved <em>wrong</em>, but because it failed to explain behaviours that exist in humans but not in rats. The cognitive paradigm asked a different kind of question — and that is what changed psychology.</p>
+  </div>
+</section>
+
+<!-- ═════════════ MIND MAP ═════════════ -->
+<section id="mindmap">
+  <div class="section-label">§ 0A · Conceptual Mind Map</div>
+  <h2 class="section-title">How <em>everything</em> connects</h2>
+  <p class="section-subtitle">Seven thematic branches radiating from the central question. Every concept, card, and table in this platform sits under one of these.</p>
+
+  <div class="mindmap-wrap">
+    <div class="mindmap">
+<svg viewBox="0 0 1100 700" xmlns="http://www.w3.org/2000/svg" font-family="DM Sans, sans-serif">
+  <defs>
+    <radialGradient id="centerGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c9a96e" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#c9a96e" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- soft halo -->
+  <circle cx="550" cy="350" r="180" fill="url(#centerGrad)"/>
+
+  <!-- central node -->
+  <circle cx="550" cy="350" r="78" fill="#1a1814" stroke="#c9a96e" stroke-width="1.4"/>
+  <text x="550" y="338" text-anchor="middle" font-family="Cormorant Garamond, serif" font-style="italic" font-size="16" fill="#c9a96e">Central Question</text>
+  <text x="550" y="360" text-anchor="middle" font-size="11" fill="#e8e4dc" font-weight="500">Explain &amp;</text>
+  <text x="550" y="376" text-anchor="middle" font-size="11" fill="#e8e4dc" font-weight="500">control</text>
+  <text x="550" y="392" text-anchor="middle" font-size="11" fill="#e8e4dc" font-weight="500">behaviour</text>
+
+  <!-- connecting lines -->
+  <g stroke="#2a2620" stroke-width="1" fill="none" opacity="0.85">
+    <path d="M 480 310 Q 350 240 220 180"/>
+    <path d="M 488 350 Q 350 350 200 350"/>
+    <path d="M 480 390 Q 350 460 220 520"/>
+    <path d="M 550 428 Q 550 540 550 600"/>
+    <path d="M 620 390 Q 750 460 880 520"/>
+    <path d="M 612 350 Q 750 350 900 350"/>
+    <path d="M 620 310 Q 750 240 880 180"/>
+  </g>
+
+  <!-- BRANCH 1 — top left -->
+  <g>
+    <rect x="60" y="140" width="320" height="80" fill="#1a1814" stroke="#b87a7a" stroke-width="1"/>
+    <rect x="60" y="140" width="3" height="80" fill="#b87a7a"/>
+    <text x="78" y="165" font-size="10" fill="#b87a7a" font-weight="600" letter-spacing="2">BRANCH 1</text>
+    <text x="78" y="184" font-family="Cormorant Garamond, serif" font-size="17" fill="#e8e4dc" font-style="italic">Failure of Introspection</text>
+    <text x="78" y="204" font-size="11" fill="#b9b3a4">Würzburg · Marbe · Watt · Ach · imageless thought</text>
+  </g>
+
+  <!-- BRANCH 2 — left middle -->
+  <g>
+    <rect x="20" y="310" width="320" height="80" fill="#1a1814" stroke="#c9876a" stroke-width="1"/>
+    <rect x="20" y="310" width="3" height="80" fill="#c9876a"/>
+    <text x="38" y="335" font-size="10" fill="#c9876a" font-weight="600" letter-spacing="2">BRANCH 2</text>
+    <text x="38" y="354" font-family="Cormorant Garamond, serif" font-size="17" fill="#e8e4dc" font-style="italic">Foundations of Behaviourism</text>
+    <text x="38" y="374" font-size="11" fill="#b9b3a4">Thorndike · puzzle box · law of effect · Pavlov</text>
+  </g>
+
+  <!-- BRANCH 3 — bottom left -->
+  <g>
+    <rect x="60" y="480" width="320" height="80" fill="#1a1814" stroke="#8a9a6e" stroke-width="1"/>
+    <rect x="60" y="480" width="3" height="80" fill="#8a9a6e"/>
+    <text x="78" y="505" font-size="10" fill="#8a9a6e" font-weight="600" letter-spacing="2">BRANCH 3</text>
+    <text x="78" y="524" font-family="Cormorant Garamond, serif" font-size="17" fill="#e8e4dc" font-style="italic">Methodological Behaviourism</text>
+    <text x="78" y="544" font-size="11" fill="#b9b3a4">Watson · S–R bond · Little Albert · environmentalism</text>
+  </g>
+
+  <!-- BRANCH 4 — bottom centre -->
+  <g>
+    <rect x="390" y="600" width="320" height="80" fill="#1a1814" stroke="#b86a5a" stroke-width="1"/>
+    <rect x="390" y="600" width="3" height="80" fill="#b86a5a"/>
+    <text x="408" y="625" font-size="10" fill="#b86a5a" font-weight="600" letter-spacing="2">BRANCH 4</text>
+    <text x="408" y="644" font-family="Cormorant Garamond, serif" font-size="17" fill="#e8e4dc" font-style="italic">Radical Behaviourism</text>
+    <text x="408" y="664" font-size="11" fill="#b9b3a4">Skinner · explanatory fictions · operant · S→R</text>
+  </g>
+
+  <!-- BRANCH 5 — bottom right -->
+  <g>
+    <rect x="720" y="480" width="320" height="80" fill="#1a1814" stroke="#6a9aa0" stroke-width="1"/>
+    <rect x="720" y="480" width="3" height="80" fill="#6a9aa0"/>
+    <text x="738" y="505" font-size="10" fill="#6a9aa0" font-weight="600" letter-spacing="2">BRANCH 5</text>
+    <text x="738" y="524" font-family="Cormorant Garamond, serif" font-size="17" fill="#e8e4dc" font-style="italic">Neobehaviourism</text>
+    <text x="738" y="544" font-size="11" fill="#b9b3a4">Hull (atomistic) · Tolman (molar) · operational defs</text>
+  </g>
+
+  <!-- BRANCH 6 — right middle -->
+  <g>
+    <rect x="760" y="310" width="320" height="80" fill="#1a1814" stroke="#9a7aa8" stroke-width="1"/>
+    <rect x="760" y="310" width="3" height="80" fill="#9a7aa8"/>
+    <text x="778" y="335" font-size="10" fill="#9a7aa8" font-weight="600" letter-spacing="2">BRANCH 6</text>
+    <text x="778" y="354" font-family="Cormorant Garamond, serif" font-size="17" fill="#e8e4dc" font-style="italic">Hypothetical Constructs</text>
+    <text x="778" y="374" font-size="11" fill="#b9b3a4">MacCorquodale &amp; Meehl · ontological status · surplus</text>
+  </g>
+
+  <!-- BRANCH 7 — top right -->
+  <g>
+    <rect x="720" y="140" width="320" height="80" fill="#1a1814" stroke="#d4b876" stroke-width="1"/>
+    <rect x="720" y="140" width="3" height="80" fill="#d4b876"/>
+    <text x="738" y="165" font-size="10" fill="#d4b876" font-weight="600" letter-spacing="2">BRANCH 7</text>
+    <text x="738" y="184" font-family="Cormorant Garamond, serif" font-size="17" fill="#e8e4dc" font-style="italic">The Cognitive Turn</text>
+    <text x="738" y="204" font-size="11" fill="#b9b3a4">Chomsky · person variables · models · S→O→R becomes Sit→P→B</text>
+  </g>
+
+  <!-- chronological arrow -->
+  <g opacity="0.5">
+    <text x="550" y="60" text-anchor="middle" font-size="10" fill="#7a7466" letter-spacing="3">CHRONOLOGY · 1900 ────────── 1960</text>
+  </g>
+</svg>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════ CONCEPTS — FILTER + BRANCHES ═════════════ -->
+<section id="concepts">
+  <div class="section-label">§ 1 · High-Yield Exam Concepts</div>
+  <h2 class="section-title">50 concepts, <em>seven branches</em></h2>
+  <p class="section-subtitle">Definition · Explanation · Example · Exam application + model answer. Filter by branch or search any term.</p>
+
+  <div class="filter-bar" id="filterBar">
+    <button class="filter-pill active" data-branch="all"><span class="dot"></span>All branches</button>
+    <button class="filter-pill" data-branch="1"><span class="dot"></span>1 · Failure of Introspection</button>
+    <button class="filter-pill" data-branch="2"><span class="dot"></span>2 · Foundations</button>
+    <button class="filter-pill" data-branch="3"><span class="dot"></span>3 · Methodological</button>
+    <button class="filter-pill" data-branch="4"><span class="dot"></span>4 · Radical</button>
+    <button class="filter-pill" data-branch="5"><span class="dot"></span>5 · Neobehaviourism</button>
+    <button class="filter-pill" data-branch="6"><span class="dot"></span>6 · Hypothetical Constructs</button>
+    <button class="filter-pill" data-branch="7"><span class="dot"></span>7 · Cognitive Turn</button>
+  </div>
+
+  <!-- ───── BRANCH 1 ───── -->
+  <div class="branch" data-branch="1" id="branch-1">
+    <div class="branch-header">
+      <div class="branch-num">01</div>
+      <div class="branch-title-block">
+        <div class="label">Branch One</div>
+        <h2>The Failure of Introspection</h2>
+        <p class="branch-bridge">Behaviourism did not appear from nowhere. It arose as an explicit rejection of the introspectionist paradigm — a rejection grounded in evidence, not prejudice. This branch covers the two evidential failures: introspection couldn't explain certain higher mental processes, and different laboratories produced different results from the same method.</p>
+      </div>
+    </div>
+
+    <p class="transition-prose">We begin where the chapter begins — with two problems Wundt's students discovered, in his own tradition, that could not be explained by looking inward. Each concept that follows tightens the case against introspection.</p>
+
+    <!-- Concept 1 -->
+    <div class="concept-card" data-search="introspection wundt method consciousness">
+      <div class="concept-card-head"><span class="concept-num">01</span><span class="concept-title">Introspection</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">A method in which trained observers report the contents of their own consciousness in order to study mental structure or function.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>Used by Wundt to study the structure of the mind and by James and the functionalists to study its function. Behaviourism arose specifically as the rejection of this method because it failed to deliver replicable, scientific findings about behaviour.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>A trained observer is asked to lift two weights and report on the residual mental sensation that allows them to compare which is heavier — Marbe's classic 1901 design.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"Why was introspection rejected as a method by experimental psychologists?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> Two evidential reasons. First, introspection failed to explain certain phenomena — Marbe's weight-judgement, Watt's object-naming, Ach's determining tendency all showed behaviour occurring without conscious mental content. Second, different laboratories produced different results using the method (the imageless thought controversy), so introspection failed the criterion of replicability that defines a science.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 2 -->
+    <div class="concept-card" data-search="würzburg külpe wundt higher mental processes">
+      <div class="concept-card-head"><span class="concept-num">02</span><span class="concept-title">The Würzburg School</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">A research group founded by Oswald Külpe (1862–1915), who had been Wundt's student, that used introspection to study <em>higher</em> mental processes — which Wundt himself had ruled outside experimental psychology.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>The Würzburg studies are pivotal because they exposed the limits of the very method they used. By systematically asking introspectors to report on judgement, naming and willing, the school produced the evidence that introspection could not explain higher mental processes — building on the previous concept's definition.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>Marbe (1901) on weight judgement, Watt (1913) on naming, and Ach (1910) on the will were all Würzburg studies.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"Identify the Würzburg school and explain its significance for the history of behaviourism."</p>
+          <p class="exam-a"><strong>Model answer:</strong> Founded by Külpe, the school broke with Wundt's prohibition on studying higher mental processes experimentally. Its significance is paradoxical: it set out to extend introspection but ended up generating the evidence — Marbe, Watt, Ach — that demonstrated introspection's failure, paving the way for behaviourism.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 3 -->
+    <div class="concept-card" data-search="marbe weight judgement 1901 introspection failed">
+      <div class="concept-card-head"><span class="concept-num">03</span><span class="concept-title">Marbe's Weight-Judgement Study (1901)</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">An experiment in which participants lifted two weights in succession and reported which was heavier. Marbe expected a residual mental sensation of the first weight; he did not find one.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>This single negative result — that people simply could not introspect the basis of their judgement — is foundational. It anticipates Kahneman's modern finding that the reasons we report for our actions are not necessarily the reasons that direct our behaviour.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>Lift weight A, lift weight B, say which is heavier. Most people can do it. Almost no one can say <em>how</em> they did it.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"Briefly describe Marbe's 1901 study and explain its theoretical significance."</p>
+          <p class="exam-a"><strong>Model answer:</strong> Marbe asked participants to compare two lifted weights and introspect the basis of their judgement. He expected a residual mental sensation of the first weight but found none. The result mattered because it suggested that introspection is not a useful tool for finding out how the mind causes behaviour — a finding later cognitive psychologists, including Kahneman, would corroborate.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 4 -->
+    <div class="concept-card" data-search="watt naming objects watson conscious thought">
+      <div class="concept-card-head"><span class="concept-num">04</span><span class="concept-title">Watt's Object-Naming Studies (1913)</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">H. J. Watt's investigation of how people name objects, which found that the name is produced without conscious thought — it just appears in consciousness from nowhere.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>A second blow to introspection from the same school. Where Marbe showed judgement is opaque to introspection, Watt showed naming is too. The pattern is now visible: higher cognitive acts proceed without introspectible content.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>Show someone a chair. They say "chair" instantly. Ask them how they did it. They cannot tell you anything beyond "I just knew."</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"What did Watt's research add to the case against introspection?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> Watt extended Marbe's argument from judgement to naming. He found that object names appear in consciousness without conscious thought, confirming that introspection cannot illuminate the cognitive processes that generate everyday behaviour — even something as basic as labelling an object.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 5 -->
+    <div class="concept-card" data-search="ach determining tendency motivation will">
+      <div class="concept-card-head"><span class="concept-num">05</span><span class="concept-title">Ach's Determining Tendency</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">A tendency to achieve a particular goal where there is no conscious awareness of the intention at the moment the action is carried out.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>Ach (1871–1946) studied what was then called "the will" and is now called motivation. He showed that goal-directed behaviour can occur without prior conscious thought — completing the trio of evidence (with Marbe and Watt) that the introspectionist programme could not handle.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>You intend to go to the shops but find yourself walking home instead. Ach's number-task version: shown "6 and 2" preceded by the cued word "add", participants invariably said "8" — without awareness that the word had directed the response.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"What is a determining tendency, and why is it problematic for introspection?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> A determining tendency is goal-directed behaviour produced without conscious awareness of the relevant intention. It is problematic for introspection because it shows that some behaviour is shaped by mental influences that are simply not available to introspective report — undermining introspection's claim to be a complete method.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 6 -->
+    <div class="concept-card" data-search="imageless thought controversy bühler woodworth titchener">
+      <div class="concept-card-head"><span class="concept-num">06</span><span class="concept-title">The Imageless Thought Controversy</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">A dispute over whether thought without images is possible. Bühler and Woodworth said yes; Wundt and Titchener said no.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>This is the second major problem for introspection. Where the Würzburg studies showed introspection couldn't explain certain phenomena, the imageless-thought dispute showed introspection couldn't even agree with itself across laboratories. Each side accused the other's introspectors of being insufficiently trained or of suggestion-induced illusion.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>Bühler's lab reports thought without images; Titchener's lab — using the extensive training Titchener insisted upon — reports the opposite. The controversy was never resolved.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"Why does the imageless thought controversy matter for the scientific status of psychology?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> If different laboratories produce different results using the same method, that method cannot be described as scientific — replicability is a defining criterion of a science. The controversy was never resolved, which provided fertile ground for a new psychology, behaviourism, that rejected introspection altogether.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 7 -->
+    <div class="concept-card" data-search="replicability science criterion popper falsifiability">
+      <div class="concept-card-head"><span class="concept-num">07</span><span class="concept-title">Replicability as a Criterion of Science</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">The principle that the same method, applied competently in different laboratories, should yield the same findings.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>Where Marbe, Watt and Ach attacked introspection's <em>scope</em> (it can't explain everything), the imageless-thought controversy attacked its <em>reliability</em>. Together these failures made introspection scientifically untenable and prepared the ground for Watson's rejection.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>Two physics labs measuring the speed of light should agree. Two psychology labs using introspection on imageless thought did not.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"How does the criterion of replicability bear on the rejection of introspection?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> Replicability is a defining criterion of science. Introspection failed it: the imageless-thought dispute showed that competent labs reached opposing conclusions using the same method. This methodological failure — independent of any worry about scope — was sufficient on its own to push psychology toward methodological alternatives such as behaviourism.</p>
+        </div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- ───── BRANCH 2 ───── -->
+  <div class="branch" data-branch="2" id="branch-2">
+    <div class="branch-header">
+      <div class="branch-num">02</div>
+      <div class="branch-title-block">
+        <div class="label">Branch Two</div>
+        <h2>The Foundations of Behaviourism</h2>
+        <p class="branch-bridge">Even before "behaviourism" had a name, two researchers were already laying its substrate: Thorndike with cats in puzzle boxes, Pavlov with dogs and bells. Their laws and conditioning principles gave Watson the empirical material for a new psychology.</p>
+      </div>
+    </div>
+
+    <p class="transition-prose">If Branch 1 explains why a new psychology was needed, Branch 2 explains where its raw materials came from. Each concept here builds the case that animal behaviour can be lawfully described — without recourse to introspection.</p>
+
+    <!-- Concept 8 -->
+    <div class="concept-card" data-search="metatheoretical assumptions paradigm behaviourism">
+      <div class="concept-card-head"><span class="concept-num">08</span><span class="concept-title">Metatheoretical Assumptions of Behaviourism</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">Untested foundational assumptions on which the paradigm rests: (a) the mechanisms that cause behaviour are the same for rats and humans, and (b) behaviour should be explained in a particular way (without reference to mental content).</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>A paradigm is not just a collection of theories but a set of background commitments. Behaviourism's two commitments — animal-human continuity and a specific explanatory format — define what counts as a behaviourist explanation regardless of the specific theorist.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>Watson studying rat behaviour in order to understand human behaviour assumes (a). Skinner refusing to invoke internal states assumes (b).</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"What are the two main metatheoretical assumptions of behaviourism?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> First, that human behaviour can be predicted from observations of animal behaviour — there is no fundamental dividing line between animals and humans. Second, that behaviour is controlled by its consequences and should be explained in a particular form, without recourse to mental content.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 9 -->
+    <div class="concept-card" data-search="thorndike puzzle box cats animal experiments">
+      <div class="concept-card-head"><span class="concept-num">09</span><span class="concept-title">Thorndike's Puzzle Box</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">An apparatus in which a hungry cat must perform a particular action to escape and reach food outside. Time-to-escape was measured across repeated trials.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>Thorndike (1874–1949) ran his experiments in William James's basement at Harvard because psychology departments did not yet study animals. The gradual decrease in escape time across trials was the empirical foundation for his two laws.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>A kitten placed in a box with food outside takes 200 seconds to escape on trial 1; by trial 20, only 8 seconds. Learning had occurred — without introspection.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"Describe Thorndike's puzzle box experiments and explain their importance."</p>
+          <p class="exam-a"><strong>Model answer:</strong> Thorndike placed hungry cats in puzzle boxes requiring different solutions and timed their escape over repeated trials. Time-to-escape decreased gradually, suggesting incremental learning. The experiments mattered because they showed that systematic, lawful behaviour change could be studied without invoking mental content — providing the empirical basis for the law of effect.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 10 -->
+    <div class="concept-card" data-search="law of effect satisfaction discomfort thorndike reinforcement">
+      <div class="concept-card-head"><span class="concept-num">10</span><span class="concept-title">Thorndike's Law of Effect</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">"Of several responses made to the same situation, those which are accompanied or closely followed by satisfaction will be more firmly connected with the situation… those which are accompanied or closely followed by discomfort will have their connections weakened" (Thorndike, 1911, p. 244).</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>In plain language: animals do more of what they enjoy and less of what they don't. The novelty was not the idea but the quasi-scientific framing as a "law" — psychology, like physics, now had laws. The concept of "satisfaction" was, however, defined circularly (satisfaction = whatever increased response probability).</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>The cat that brushes against the latch and escapes does so faster on subsequent trials. The brushing was followed by satisfaction (food, freedom), so the connection is strengthened.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"State Thorndike's law of effect and identify one limitation."</p>
+          <p class="exam-a"><strong>Model answer:</strong> Responses followed by satisfaction become more strongly connected to the situation; responses followed by discomfort become less so. The principal limitation is that "satisfaction" is defined circularly — it is identified by its effect on behaviour rather than independently. Skinner later avoided this by simply identifying the conditions that were reinforcing.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 11 -->
+    <div class="concept-card" data-search="law of exercise habit repetition vigor duration">
+      <div class="concept-card-head"><span class="concept-num">11</span><span class="concept-title">Thorndike's Law of Exercise</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">"Any response to a situation will be more strongly connected with the situation in proportion to the number of times it has been connected with that situation and to the average vigor and duration of the connections" (Thorndike, 1911, p. 244).</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>Animals tend to repeat behaviours they have done before. The idea was already present in James's analysis of habit; Thorndike's contribution was the formal statement. Sits alongside the law of effect as the empirical groundwork Watson would inherit.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>A rat that has run a maze 50 times runs it more reliably than a rat that has run it twice — independently of any reward.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"How do the law of effect and the law of exercise differ?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> The law of effect concerns the <em>consequences</em> of a response (satisfaction strengthens, discomfort weakens). The law of exercise concerns the <em>frequency, vigour and duration</em> of the response itself. They were intended to operate jointly: practice strengthens the connection, and outcomes determine which connections are practiced.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 12 -->
+    <div class="concept-card" data-search="reactive inhibition spontaneous alternation t maze rat">
+      <div class="concept-card-head"><span class="concept-num">12</span><span class="concept-title">Reactive Inhibition &amp; Spontaneous Alternation</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">Reactive inhibition: a build-up of resistance to repeating an action. Spontaneous alternation: the observed phenomenon that a rat reinforced for turning right in a T-maze will, after some trials, turn left.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>This is the gentle counter-example to Thorndike's laws. Despite reinforcement always supporting one response, the animal alternates. The textbook frames this as "the gods punishing hubris" — psychological laws are messier than physical laws.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>You have been revising for two hours. Your boredom is reactive inhibition. The remedy: short break, do something different.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"What is spontaneous alternation, and what does it suggest about Thorndike's laws?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> A rat consistently reinforced for turning right will eventually turn left — spontaneous alternation. This contradicts the strict prediction of the law of effect and is explained by reactive inhibition, which accumulates with repetition and dissipates over time. It demonstrates that Thorndike's laws are useful approximations rather than exceptionless laws of behaviour.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 13 -->
+    <div class="concept-card" data-search="pavlov classical conditioning unconditioned stimulus dogs">
+      <div class="concept-card-head"><span class="concept-num">13</span><span class="concept-title">Pavlov's Classical Conditioning</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">A form of associative learning in which a previously neutral stimulus, paired repeatedly with an unconditioned stimulus that elicits an unconditioned response, comes to elicit a conditioned response on its own.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>Ivan Pavlov (1849–1936) demonstrated this with dogs, food and a bell. Watson took the principle and applied it to humans, including in the Little Albert study. Later renamed "respondent conditioning" by Skinner to distinguish it from operant conditioning.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>Food (UCS) → salivation (UCR). Bell + food, repeated. Bell alone (CS) → salivation (CR).</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"Explain classical (respondent) conditioning and describe how Watson applied it."</p>
+          <p class="exam-a"><strong>Model answer:</strong> Classical conditioning involves the formation of an association between a neutral stimulus and an unconditioned stimulus, such that the previously neutral stimulus comes to elicit the response on its own. Watson applied the principle to fear acquisition in the Little Albert study, pairing a white rat (neutral) with a loud noise (UCS for fear) until the rat alone elicited the fear response.</p>
+        </div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- ───── BRANCH 3 ───── -->
+  <div class="branch" data-branch="3" id="branch-3">
+    <div class="branch-header">
+      <div class="branch-num">03</div>
+      <div class="branch-title-block">
+        <div class="label">Branch Three</div>
+        <h2>Methodological Behaviourism — Watson</h2>
+        <p class="branch-bridge">Watson took Thorndike and Pavlov, threw out introspection, and named the new paradigm. His behaviourism is called <em>methodological</em> because its rationale is methodological — objective observation is a better method for psychology than introspection.</p>
+      </div>
+    </div>
+
+    <p class="transition-prose">If Branch 2 supplied the materials, Watson built the house. The next concepts move from his founding statement, through the mechanism (S–R bonds, habit, conditioning), to the dramatic Little Albert demonstration and the troubling extensions to child rearing.</p>
+
+    <!-- Concept 14 -->
+    <div class="concept-card" data-search="watson methodological behaviourism 1913 psychological review objective">
+      <div class="concept-card-head"><span class="concept-num">14</span><span class="concept-title">Methodological Behaviourism</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">The position, founded by Watson, that objective observation is a better method for understanding psychology than introspection — and accordingly that psychology should adopt the methods developed in animal psychology, where introspection is impossible.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>Crucially, the rationale is <em>methodological</em>, not philosophical. Watson does not deny mental events exist; he denies that introspection is a useful way to study them. This distinguishes his position from Skinner's later radical behaviourism. Founding statement: Watson's 1913 article "Psychology as the Behaviorist Views It" in <em>Psychological Review</em>.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>Watson studying rats with stopwatches and mazes — the same techniques can, he argues, be applied to humans without needing introspective reports.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"Define methodological behaviourism. Why is it called <em>methodological</em>?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> Methodological behaviourism is the view that psychology should restrict itself to objective methods — those used in animal psychology — because introspection is unreliable. It is called methodological because its rationale concerns method (introspection doesn't work) rather than ontology (whether mental events exist). Watson's 1913 paper sets out the position: psychology is "a purely objective experimental branch of natural science" whose theoretical goal is the prediction and control of behaviour.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 15 -->
+    <div class="concept-card" data-search="stimulus response bond s-r habit watson">
+      <div class="concept-card-head"><span class="concept-num">15</span><span class="concept-title">The Stimulus–Response (S–R) Bond</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">A learned association between an environmental stimulus and a behavioural response that, when repeated, becomes a habit.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>The central explanatory unit of Watson's theory. Habits — accumulations of S–R bonds — were responsible for most behaviour. Conditioning could either build healthy habits (well-adjusted person) or pathological ones (neurotic person).</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>Sight of a loud bar (S) → flinch (R). Repeated. Eventually the bar's appearance alone is sufficient to produce the flinch.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"How does Watson's concept of the S–R bond relate to Thorndike's law of effect and James's concept of habit?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> Watson's S–R bond synthesises both. From Thorndike's law of effect he takes the idea that connections between situation and response are strengthened by their consequences. From James he takes the idea of habit as the cumulative result of repetition. The S–R bond becomes Watson's central explanatory unit — the building block of all habitual behaviour.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 16 -->
+    <div class="concept-card" data-search="watson environmentalism dozen healthy infants nurture quote">
+      <div class="concept-card-head"><span class="concept-num">16</span><span class="concept-title">Watson's Environmentalism (the "Dozen Healthy Infants" Claim)</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">The view that environmental conditioning, given the right circumstances, can shape any healthy infant into any specialist — doctor, lawyer, artist, beggar, thief — regardless of inherited talents or ancestry.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>Watson's strongest formulation of the environmental determination of behaviour. Underlying assumption: humans (like animals) are adaptive systems that mould themselves to environmental demand.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>The famous quote (Watson, 1924/1970, p. 10): give him a dozen healthy infants and his own specified world and he could produce any specialist on demand.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"What does Watson's 'dozen healthy infants' claim reveal about his theoretical commitments?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> The claim reveals two commitments. First, a strongly environmentalist position — behaviour is determined by conditioning, not inheritance. Second, an underlying view of humans as adaptive systems that mould themselves to environmental demand, which is the same view he held of animals and which underwrites the assumption of animal–human continuity.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 17 -->
+    <div class="concept-card" data-search="little albert rayner conditioned fear white rat 1920">
+      <div class="concept-card-head"><span class="concept-num">17</span><span class="concept-title">The Little Albert Study (Watson &amp; Rayner, 1920)</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">A demonstration that a fear response in a young child could be acquired through classical conditioning by pairing a previously neutral stimulus (a white rat) with a loud aversive noise.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>The signature applied demonstration of Watson's behaviourism. It linked Pavlovian conditioning to clinical phenomena (neuroses, phobias). It is also notorious — for ethical reasons, for the unreliability of subsequent retellings, and for the fact that the conditioning effect was relatively weak and required "freshening up".</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>White rat presented → no fear. Rat + loud noise (steel bar struck with hammer) repeated. Five days after final pairing, rat alone presented → Albert cries and crawls away. Fear generalised to rabbit, dog, fur coat, cotton wool, Father Christmas.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"Describe the Little Albert study and discuss two limitations of the work."</p>
+          <p class="exam-a"><strong>Model answer:</strong> Watson and Rayner conditioned a fear response in nine-month-old "Little Albert" by pairing a white rat with a loud noise made by striking a steel bar; the fear generalised to other furry stimuli. Limitations: (i) the conditioning effect was actually weak — Watson had to "freshen up" the response — and later textbook retellings invented objects (teddy bear, fur glove) not present in the original report; (ii) the study would not now obtain ethical approval, and the identity and health of "Albert" remain disputed (Beck et al. 2009 vs. Digdon et al. 2014), which raises questions about Watson's reporting accuracy.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 18 -->
+    <div class="concept-card" data-search="generalisation conditioned fear stimulus generalization">
+      <div class="concept-card-head"><span class="concept-num">18</span><span class="concept-title">Generalisation of Conditioned Fear</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">The phenomenon whereby a conditioned response acquired to one stimulus is also elicited by similar stimuli that were never directly paired with the unconditioned stimulus.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>Significant for the Little Albert study because it showed conditioned fear was not narrowly tied to one particular object. This generalisation is precisely what makes a conditioning account of phobias plausible — phobias are typically about classes of stimulus, not single instances.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>Albert, conditioned to fear the white rat, also showed fear to a rabbit, a dog, a fur coat, cotton wool and a Father Christmas mask.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"What is stimulus generalisation and why was it important in the Little Albert study?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> Stimulus generalisation is the elicitation of a conditioned response by stimuli similar to, but not identical with, the originally conditioned stimulus. It mattered for Little Albert because it showed conditioning produced a transferable fear response — laying the groundwork for a behaviourist theory of phobias and clinical neuroses.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 19 -->
+    <div class="concept-card" data-search="watson child rearing affection independence emotional attachment">
+      <div class="concept-card-head"><span class="concept-num">19</span><span class="concept-title">Watson's Approach to Child Rearing</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">A set of recommendations, set out in <em>Psychological Care of the Infant and Child</em> (1928), based on the assumption that children are mini-adults to whom the same conditioning principles apply as to rats and adults.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>Some recommendations are uncontroversial (regular routines, prevent misbehaviour by keeping children busy, use punishment sparingly). The controversial element was the recommendation that children should <em>not</em> be shown affection — Watson believed it produced over-dependence. This is now considered entirely wrong: emotional attachment in early life contributes to later well-being (Bowlby, 1982).</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>"Mothers just don't know, when they kiss their children… that they are slowly building up a human being totally unable to cope with the world it must later live in" (Watson, 1928/1972, p. 44).</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"Evaluate Watson's behaviourist approach to child rearing."</p>
+          <p class="exam-a"><strong>Model answer:</strong> Watson treated children as mini-adults, applying conditioning principles to upbringing. Some advice — regular routines, sparing punishment — remains broadly defensible. The advice to withhold affection, however, is now considered seriously wrong: attachment research from Bowlby onwards shows emotional attachment is essential for later well-being. The personal sequel is sobering: both Watson's sons experienced depression and one died by suicide, attributing their unhappiness to their upbringing.</p>
+        </div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- ───── BRANCH 4 ───── -->
+  <div class="branch" data-branch="4" id="branch-4">
+    <div class="branch-header">
+      <div class="branch-num">04</div>
+      <div class="branch-title-block">
+        <div class="label">Branch Four</div>
+        <h2>Radical Behaviourism — Skinner</h2>
+        <p class="branch-bridge">Watson rejected introspection on methodological grounds. Skinner went further. Drawing on philosophy of science — specifically Hempel's paradox of theorising — Skinner argued that all theoretical terms in psychology are redundant. Behaviourism, on his view, should restrict itself to S→R links irrespective of the nature of the intervening O.</p>
+      </div>
+    </div>
+
+    <p class="transition-prose">The next concepts move from the philosophical foundations of Skinner's position (observation vs theoretical terms, the paradox of theorising, explanatory fictions) through to his constructive contributions (operant conditioning, the Skinner box, reinforcement) and the cultural reach of his ideas.</p>
+
+    <!-- Concept 20 -->
+    <div class="concept-card" data-search="radical behaviourism skinner theoretical terms">
+      <div class="concept-card-head"><span class="concept-num">20</span><span class="concept-title">Radical Behaviourism</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">Skinner's position that psychology should restrict itself to S–R links and ignore psychological theoretical terms <em>irrespective of their nature</em> — whether mentalistic or physiological.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>Distinct from Watson's methodological behaviourism in two ways. (i) The rationale is philosophical (theoretical terms are redundant) rather than methodological (introspection is unreliable). (ii) Skinner rejects <em>all</em> theoretical terms — physiological as well as mental — whereas Watson only rejected the mental.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>The S→O→R explanation "Lion → Fear → Running away" is rejected by Skinner. So is "Lion → Cortical activation → Running away." Both invoke an unobservable O variable.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"How does Skinner's radical behaviourism differ from Watson's methodological behaviourism?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> Watson's behaviourism is methodological — based on the unreliability of introspection — and rejects mental content while accepting that physiological explanation might be valid. Skinner's is radical because it rests on a philosophy-of-science argument (the paradox of theorising) and rejects <em>all</em> theoretical terms in psychology, mentalistic and physiological alike. The two positions reach similar empirical conclusions for very different reasons.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 21 -->
+    <div class="concept-card" data-search="observation terms theoretical terms hempel paradox">
+      <div class="concept-card-head"><span class="concept-num">21</span><span class="concept-title">Observation Terms vs Theoretical Terms</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">A distinction in philosophy of science. Observation terms refer to things that can be seen (tables, levers, dials). Theoretical terms refer to things that cannot (electrons, atoms, fear).</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>For many explanations, theoretical terms intervene between observation terms — A (observation) causes B (observation) because of C (a theoretical-level rationale). In psychology this becomes Stimulus → Organism variable → Response (S → O → R). The crucial issue is whether the O variable is genuinely doing explanatory work or merely re-describing the connection.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>Lion (S) → Fear (O) → Running away (R). The O term "fear" is a theoretical term — not directly observable. Lion (S) → Cortical activation (O) → Running away (R) is the same form with a physiological O variable.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"Explain the distinction between observation and theoretical terms and apply it to the psychological formula S → O → R."</p>
+          <p class="exam-a"><strong>Model answer:</strong> Observation terms refer to things that can be directly observed; theoretical terms refer to things that must be inferred. In psychology, S (stimulus) and R (response) are observation terms, while O (organism variable) is a theoretical term — it could be a mental state (fear), a physiological state (cortical activation), or any other inferred construct. Whether the O variable is doing genuine explanatory work, or is redundant given the S–R link, became a key issue between behaviourists and their successors.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 22 -->
+    <div class="concept-card" data-search="paradox of theorising hempel 1958 redundant theoretical terms">
+      <div class="concept-card-head"><span class="concept-num">22</span><span class="concept-title">The Paradox of Theorising (Hempel, 1958)</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">An argument that theoretical terms are ultimately redundant: their purpose is to form links between observation terms, but once those links exist, the theoretical term is no longer needed because the observation terms can be connected directly.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>Skinner's philosophical foundation. If S → O → R, then once the connection is established the O drops out and S → R is sufficient. This argument, applied to psychology, motivated radical behaviourism's rejection of all theoretical terms.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>Once we know which lions cause running away, we no longer need "fear" to make the prediction.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"State the paradox of theorising and explain its implications for psychology."</p>
+          <p class="exam-a"><strong>Model answer:</strong> The paradox, articulated by Hempel in 1958, holds that theoretical terms exist to link observation terms, but once those links are established the theoretical terms become redundant. For psychology, this means that if the organism variable in S → O → R does its job, the formula simplifies to S → R. Skinner used this argument to motivate radical behaviourism's rejection of theoretical terms. The neobehaviourist response was to allow theoretical terms only when they were operationally defined.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 23 -->
+    <div class="concept-card" data-search="explanatory fiction circular skinner inferred behaviour">
+      <div class="concept-card-head"><span class="concept-num">23</span><span class="concept-title">Explanatory Fiction</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">A theoretical term that masquerades as an explanation but only re-describes the behaviour it is supposed to explain. The term is inferred from the behaviour and then used to explain that same behaviour.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>Skinner's central criticism of mentalistic and other organism-variable explanations. The illusion of explanation is provided when the theoretical term simply re-labels the observation. A later section of the chapter explains what is required to make an organism variable <em>not</em> an explanatory fiction.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>"John runs away because he is afraid." How do we know he is afraid? Because he runs away. Fear has been inferred from his behaviour and is now being used to explain it — circular, hence an explanatory fiction.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"What is an explanatory fiction? Provide an example."</p>
+          <p class="exam-a"><strong>Model answer:</strong> An explanatory fiction is a theoretical term that appears to explain behaviour but in fact only re-describes it. The term is inferred from the very behaviour it is then used to explain — making the explanation circular. Example: John smiles, so we infer he is happy; we then claim he smiles <em>because</em> he is happy, even though our only evidence for happiness is his smiling.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 24 -->
+    <div class="concept-card" data-search="operant conditioning respondent conditioning skinner reinforcement">
+      <div class="concept-card-head"><span class="concept-num">24</span><span class="concept-title">Operant vs Respondent (Classical) Conditioning</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">Operant conditioning: the shaping of voluntary behaviour through reinforcement of its consequences. Respondent conditioning: the form of conditioning studied by Pavlov (also called classical conditioning).</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>Skinner's main academic contribution. Operant conditioning is directly linked to Thorndike's law of effect: organisms do more of an action that is reinforced and less of one that is not. Skinner avoided the explanatory-fiction problem of "satisfaction" by simply identifying the conditions that <em>were</em> reinforcing — defining reinforcement by its effect on response rate.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>Rat presses lever (R), receives food pellet. Lever-press rate increases. Operant. Vs. Pavlov's bell + salivation, which is respondent.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"Distinguish operant and respondent conditioning, and explain how Skinner avoided the problem of explanatory fictions."</p>
+          <p class="exam-a"><strong>Model answer:</strong> Respondent conditioning, studied by Pavlov, involves the elicitation of an automatic response by a previously neutral stimulus paired with an unconditioned stimulus. Operant conditioning, established by Skinner, involves the shaping of voluntary behaviour by its consequences. Skinner avoided the circularity of Thorndike's "satisfaction" by simply identifying the conditions that were reinforcing — defining reinforcement operationally as whatever increased the rate of a particular response.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 25 -->
+    <div class="concept-card" data-search="skinner box rat lever press apparatus reinforcement">
+      <div class="concept-card-head"><span class="concept-num">25</span><span class="concept-title">The Skinner Box</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">An experimental apparatus consisting of a box in which a rat is placed with a lever. Lever presses constitute the response. Stimuli — food pellets, electric shocks — can be applied by the experimenter.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>The technological core of Skinner's research programme. It allowed precise measurement of response rate as a function of reinforcement schedule, generating an immense amount of data on reinforcement schedules and their effects.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>A rat in a Skinner box on a variable-ratio reinforcement schedule will press the lever rapidly and persistently — the principle behind slot machines.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"Describe the Skinner box and explain its methodological contribution."</p>
+          <p class="exam-a"><strong>Model answer:</strong> The Skinner box is a controlled environment in which a single response (lever-press) can be measured precisely as a function of stimuli applied by the experimenter. Methodologically, it allowed Skinner to study the effects of reinforcement schedules under conditions of strict experimental control, generating quantitative data on response rates that supported the operant-conditioning framework.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 26 -->
+    <div class="concept-card" data-search="positive negative reinforcement punishment skinner">
+      <div class="concept-card-head"><span class="concept-num">26</span><span class="concept-title">Positive vs Negative Reinforcement</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">Positive reinforcement: gaining a positive experience, which increases the rate of the behaviour. Negative reinforcement: avoiding a negative experience, which also increases the rate of the behaviour.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>Both increase behaviour — the difference is in the type of consequence. Skinner believed reinforcement was more effective at shaping behaviour than punishment, and accordingly advocated encouragement over punishment. <em>Walden Two</em> describes a positive-reinforcement utopia.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>Positive: studying because you enjoy learning. Negative: studying to avoid being beaten. Both increase studying — the experience differs.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"Distinguish positive and negative reinforcement. What was Skinner's view of their relative value?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> Positive reinforcement increases behaviour by adding a positive consequence; negative reinforcement increases behaviour by removing or avoiding a negative consequence. Both increase behaviour. Skinner held that positive reinforcement was a more effective and more humane control technique than punishment, and advocated its use in education, child rearing and the design of social institutions.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 27 -->
+    <div class="concept-card" data-search="walden two utopia positive reinforcement skinner novel huxley">
+      <div class="concept-card-head"><span class="concept-num">27</span><span class="concept-title"><em>Walden Two</em> &amp; <em>Beyond Freedom and Dignity</em></span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">Skinner's two best-known popular books. <em>Walden Two</em> (1948) describes a utopia organised around positive reinforcement. <em>Beyond Freedom and Dignity</em> (1971) argues that freedom and dignity are illusions because all behaviour is environmentally controlled.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>The argument: if you do things for positive reinforcement you call it freedom; if you do things to avoid punishment or for negative reinforcement, you call it control. Either way, your behaviour is controlled. Aldous Huxley's <em>Brave New World</em> (1932) presents the same idea satirically, exposing the emptiness of a happy life controlled by others.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>You write your essays out of positive reinforcement (interest, the prospect of a good grade) and so feel free. If forced to write essays under threat of being beaten, you would feel coerced. Same behaviour, same control — different feeling.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"Outline Skinner's argument that freedom is an illusion."</p>
+          <p class="exam-a"><strong>Model answer:</strong> Skinner argues in <em>Beyond Freedom and Dignity</em> that all behaviour is shaped by reinforcement contingencies. When the contingencies are positive, we experience the behaviour as freely chosen; when they are aversive (punishment or negative reinforcement), we experience the same behaviour as coerced. Either way the behaviour is controlled, so the sense of freedom is the illusion of being controlled by positive consequences. Huxley's <em>Brave New World</em> presents this argument satirically by depicting a happiness-controlled society that is nonetheless empty.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 28 -->
+    <div class="concept-card" data-search="aircrib baby tender skinner deborah education teaching machine">
+      <div class="concept-card-head"><span class="concept-num">28</span><span class="concept-title">Skinner's Practical Inventions (Aircrib, Teaching Machine, Summator)</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">Three applications of behaviourist principles. The aircrib (originally "baby tender") was a controlled-environment crib for infants. Teaching machines individualised the rate of learning and provided immediate feedback. The summator (or tautophone) was an auditory inkblot for projective testing.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>Skinner believed behaviourist principles could increase human happiness. The applied work was a key part of his programme but, in his own view, "not particularly successful". Public unease — the aircrib was viewed as a "baby cage" rather than a luxury crib — limited adoption.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>Skinner's daughter Deborah used the aircrib for her first two years and grew up to be a happy and successful adult. About 50 people who used aircribs as babies were later tracked, with no evidence of harm.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"What were Skinner's main applied contributions, and why were they not more successful?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> Skinner's main applied contributions were the aircrib (controlled-environment crib), teaching machines (individualised instruction with immediate feedback), and the summator (auditory inkblot). The reasons for their limited success include cultural mismatch — by the 1960s the public was moving away from a mechanistic view of people toward a more liberal one — and image problems, such as the aircrib being received as a "baby cage". The principles themselves were technically sound but did not achieve cultural traction.</p>
+        </div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- ───── BRANCH 5 ───── -->
+  <div class="branch" data-branch="5" id="branch-5">
+    <div class="branch-header">
+      <div class="branch-num">05</div>
+      <div class="branch-title-block">
+        <div class="label">Branch Five</div>
+        <h2>Neobehaviourism — Hull &amp; Tolman</h2>
+        <p class="branch-bridge">Skinner's strict S–R discipline was theoretically uneconomical when prior history mattered: a long list of historical stimuli is unwieldy. Neobehaviourists allowed theoretical terms back in, on one strict condition: they must be operationally defined. Within that constraint, Hull built an atomistic mathematical theory and Tolman a molar, purposive one.</p>
+      </div>
+    </div>
+
+    <p class="transition-prose">The next concepts move from the shared rule of operational definition through Hull's quantitative atomism (sER, drive, habit) to Tolman's molar, purposive, S–S learning — the figure who already begins to anticipate cognitive psychology.</p>
+
+    <!-- Concept 29 -->
+    <div class="concept-card" data-search="neobehaviourism hull tolman organism variables operational">
+      <div class="concept-card-head"><span class="concept-num">29</span><span class="concept-title">Neobehaviourism</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">A form of behaviourism that allows organism variables into the explanatory framework, but only when those variables have been operationally defined.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>Motivated by the impracticality of the strict radical-behaviourist solution to historical effects on behaviour. Rather than listing every prior stimulus, the neobehaviourist allows a single organism variable that summarises external history, provided that variable is precisely defined by its measurement procedures.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>Instead of listing 200 prior occasions on which a rat was fed in the goal box, Hull defines "habit" as a function of those occasions and uses habit as the explanatory variable.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"Why did neobehaviourism arise, and what was its central methodological commitment?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> Neobehaviourism arose because radical behaviourism's strict S–R approach became unwieldy when behaviour depended on a long history of prior stimuli. Its central methodological commitment was to operational definition: organism variables were permitted only when defined precisely in terms of their measurement operations or observable effects.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 30 -->
+    <div class="concept-card" data-search="operational definition operations measurement observable">
+      <div class="concept-card-head"><span class="concept-num">30</span><span class="concept-title">Operational Definition</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">A definition of a concept in terms of its operations — that is, in terms of what it does, the observable effects it produces, or the observable events that produce it.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>The methodological gatekeeper of neobehaviourism. An operationally defined organism variable is precisely defined and grounded in observation. The classic example: <em>Intelligence is what intelligence tests measure</em>. The implication, important for Branch 6, is that an operationally defined term has no existence independent of its definition.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>Drive (D) operationally defined as the number of hours a rat has been deprived of food. Habit (H) operationally defined as the number of times the rat has performed the behaviour in the past.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"What is an operational definition? Provide an example from neobehaviourism."</p>
+          <p class="exam-a"><strong>Model answer:</strong> An operational definition specifies a concept entirely in terms of the operations used to measure or produce it. In Hull's neobehaviourism, drive is operationally defined as hours of food deprivation and habit as the number of past occasions on which the response has occurred. The crucial consequence is that, for an operationally defined variable, there is nothing more to the concept than its measurement operations.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 31 -->
+    <div class="concept-card" data-search="hull mathematical theory net reaction potential drive habit">
+      <div class="concept-card-head"><span class="concept-num">31</span><span class="concept-title">Hull's Mathematical Theory (sER = D × H)</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">A quantitative theory in which Net Reaction Potential (sER) — the potential to engage in a particular behaviour — is given by the product of Drive (D) and Habit (H): sER = D × H.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>Hull (1884–1952) attempted to mimic the mathematical theories of physics and chemistry. The metaphor: drive energises behaviour, habit directs it. Each variable is operationally defined. Hull is one of the few psychologists to have introduced quantitative theory in this way; the <em>Journal of Mathematical Psychology</em> (1964–) continues this tradition.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>A rat deprived of food for 12 hours (high D) that has run a maze 200 times (high H) will run the maze faster than a satiated rat (low D) that has run it twice (low H).</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"State Hull's basic equation and explain what each term means."</p>
+          <p class="exam-a"><strong>Model answer:</strong> Hull proposed sER = D × H, where sER is net reaction potential (approximately equal to behaviour), D is drive (operationally defined, e.g., as hours of food deprivation), and H is habit (operationally defined, e.g., as the number of times the response has been performed). Drive energises behaviour while habit directs it; both are operationally defined and so consistent with neobehaviourist constraints.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 32 -->
+    <div class="concept-card" data-search="atomistic theorising hull complexity additive">
+      <div class="concept-card-head"><span class="concept-num">32</span><span class="concept-title">Atomistic Theorising</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">Theorising in which the determinants of behaviour are simply added together — the whole is no more than the sum of its parts.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>Hull's approach. As his laboratory set-ups became more complex, more organism variables had to be added: incentive (K), work (W), and others. The equation became more complex. The atomistic strategy meant that complexity scaled additively, eventually producing a theory too unwieldy to simplify the world. Contrast with Tolman, who came from the gestalt tradition (wholes before parts).</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>An expanded Hull-style equation: sER = (D × H) + K + W + … Each new finding added a new variable.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"Explain the term 'atomistic theorising' and discuss why it caused difficulty for Hull's theory."</p>
+          <p class="exam-a"><strong>Model answer:</strong> Atomistic theorising treats the determinants of behaviour as additive: behaviour equals the sum of its parts. Hull's theory was atomistic, so each new experimental finding required a new variable to be added to the equation. This caused difficulty because the theory grew progressively more unwieldy without becoming any better at simplifying behaviour — the function a theory is supposed to perform.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 33 -->
+    <div class="concept-card" data-search="degenerating problem shift lakatos data driven">
+      <div class="concept-card-head"><span class="concept-num">33</span><span class="concept-title">Degenerating Problem Shift (Lakatos)</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">A research programme in which theory lags behind data — new findings drive new ad hoc theoretical concepts rather than the theory generating new predictions.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>Lakatos contrasted theory-led with data-led research, arguing the latter is less successful. Hull's theory is the textbook's example: each unexplained behaviour led to a new theoretical concept rather than a more powerful theory. The chapter's broader claim is that behaviourism as a whole was data-driven, which contributed to its eventual exhaustion.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>An effect of incentive size emerges in the data, so K is added. An effect of effort emerges, so W is added. The theory inflates rather than deepening.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"What is a degenerating problem shift, and how does Hull's theory exemplify it?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> A degenerating problem shift, in Lakatos's framework, is research in which theory lags behind data — new findings provoke new theoretical concepts rather than being predicted by the existing theory. Hull's theory is an example: as new variables affecting maze running emerged, new concepts were added to the equation, producing a progressively more complex theory that did not improve predictive simplification of behaviour.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 34 -->
+    <div class="concept-card" data-search="tolman purposive molar behaviourism gestalt">
+      <div class="concept-card-head"><span class="concept-num">34</span><span class="concept-title">Tolman's Purposive (Molar) Behaviourism</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">A form of neobehaviourism that treats behaviour as a molar event — an act with a goal — rather than a sequence of fine-grained actions.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>Tolman (1886–1959) was influenced by gestalt psychologists Koffka and Lewin (he worked with Koffka), and by Köhler's insight learning. His behaviourism is purposive because acts are defined by their goals — "arriving at the goal box" rather than "step left, step left, step right". This makes Tolman a transition figure between behaviourism and cognitive psychology.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>For Hull, a rat's behaviour in a maze is a sequence of left/right/forward actions. For Tolman, it is the act of getting to the goal box.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"Why is Tolman's behaviourism described as 'purposive' and 'molar'?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> It is molar because Tolman treats behaviour as a large unit — an act — rather than the smaller actions Hull used. It is purposive because acts are defined in terms of their goal: an act is the arriving at the goal box, not the individual movements that achieve it. The molar/purposive emphasis owes to Tolman's gestalt influences (Koffka, Lewin) and anticipates cognitive psychology.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 35 -->
+    <div class="concept-card" data-search="acts versus actions tolman hull molar molecular">
+      <div class="concept-card-head"><span class="concept-num">35</span><span class="concept-title">Acts vs Actions</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">Tolman's distinction. An <em>action</em> is a small, specific movement (a step left). An <em>act</em> is a larger, goal-defined unit (arriving at the goal box).</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>This is the unit-of-analysis disagreement between Tolman and Hull. Hull says the action is what is reinforced; Tolman says it is the act. The choice of unit determines what kind of theory you can build — fine-grained associationism (Hull) or holistic, goal-directed psychology (Tolman).</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>Reinforcing the rat for "two steps forward, three left, four forward" (Hull's actions) vs reinforcing it for "getting to the food" (Tolman's act).</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"Distinguish acts and actions and explain why the distinction mattered."</p>
+          <p class="exam-a"><strong>Model answer:</strong> Actions are the small, specific movements that make up behaviour; acts are larger, goal-defined units. The distinction mattered because it determined what counted as the unit of reinforcement: for Hull, individual actions; for Tolman, whole acts defined by their goals. The choice committed each theorist to a different kind of psychology — atomistic associationism for Hull, purposive holism for Tolman.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 36 -->
+    <div class="concept-card" data-search="cognitive map tolman s-s bonds maze rat anticipates cognitive psychology">
+      <div class="concept-card-head"><span class="concept-num">36</span><span class="concept-title">Cognitive Map &amp; S–S Bonds</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">Tolman's proposal that, in a maze, rats form a mental representation of the environment — a cognitive map — based on stimulus–stimulus (S–S) bonds, which they then use in later behaviour.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>The most explicit anticipation of cognitive psychology in the chapter. The very term <em>cognitive map</em> is now part of cognitive vocabulary. Where Hull's rats made gradual S–R bonds, Tolman's formed S–S bonds and went straight to the goal once the map was acquired.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>A rat placed in a maze first explores. Once it has formed the cognitive map, it goes directly to the goal box on subsequent trials.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"What is a cognitive map, and why is the term significant in the history of psychology?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> A cognitive map is a mental representation of an environment, formed from S–S bonds, that guides later behaviour. The term is significant because it was introduced by a behaviourist (Tolman) and yet is unambiguously cognitive — it refers to an internal representation. It marks Tolman as a transition figure and demonstrates that behaviourism was not monolithic in its rejection of mental concepts.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 37 -->
+    <div class="concept-card" data-search="all-or-nothing learning insight gradual associative incremental">
+      <div class="concept-card-head"><span class="concept-num">37</span><span class="concept-title">All-or-Nothing vs Incremental Learning</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">Two competing accounts of how learning happens. All-or-nothing: the animal either knows or does not know — there is no point in between (Tolman, gestalt tradition). Incremental: habits are gradually strengthened by repetition (Hull, Wundtian associationism).</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>A major debate of the period. Köhler had shown apes could learn through insight (see Chapter 10), supporting Tolman. Hull's rats made gradual progress, supporting Hull. The eventual resolution: the two camps were using different rat strains. Hull's were selectively bred to be unemotional; Tolman's were closer to wild rats — more cautious and so only went to the goal once they had mapped the maze.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>Köhler's chimpanzees suddenly seeing the solution (insight). Hull's rats progressively reducing errors (gradual).</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"Outline the all-or-nothing vs incremental learning debate. How was it eventually resolved?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> Tolman (gestalt-influenced) argued learning is all-or-nothing — the animal either has the cognitive map or does not. Hull (associationist) argued learning is incremental — habits are gradually strengthened by repetition. The debate was eventually resolved by the recognition that the two laboratories were using different rat strains: Hull's were unemotional and produced gradual learning curves, whereas Tolman's were closer to wild rats, more cautious, and so produced all-or-nothing learning once they had mapped the environment.</p>
+        </div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- ───── BRANCH 6 ───── -->
+  <div class="branch" data-branch="6" id="branch-6">
+    <div class="branch-header">
+      <div class="branch-num">06</div>
+      <div class="branch-title-block">
+        <div class="label">Branch Six</div>
+        <h2>Hypothetical Constructs &amp; Intervening Variables</h2>
+        <p class="branch-bridge">A 1948 paper by MacCorquodale &amp; Meehl made the distinction that finally allowed psychology to leave behind both Skinner's strict S–R and Hull's atomism. Some organism variables are merely shorthand summaries of measurement (intervening variables); others are hypothesised to exist independently (hypothetical constructs). The latter is what cognitive psychology would adopt.</p>
+      </div>
+    </div>
+
+    <p class="transition-prose">This is the philosophical hinge of the chapter. The next four concepts work through the central distinction (intervening variable vs hypothetical construct), the ontological status that distinguishes them, the surplus meaning that hypothetical constructs carry, and the consequence: the rise of the person variable.</p>
+
+    <!-- Concept 38 -->
+    <div class="concept-card" data-search="maccorquodale meehl 1948 hypothetical construct intervening variable">
+      <div class="concept-card-head"><span class="concept-num">38</span><span class="concept-title">Hypothetical Constructs vs Intervening Variables (MacCorquodale &amp; Meehl, 1948)</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">An intervening variable is an organism variable defined entirely by its measurement procedures — there is nothing more to it than its operations. A hypothetical construct is hypothesised to exist independently of measurement and so retains some existence beyond its definition.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>The decisive theoretical move of the chapter. The distinction enabled the ontological re-acceptance of mental terms in psychology — provided one was willing to treat them as hypothetical constructs (existing in some sense in the person) rather than as mere intervening variables.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>"Intelligence is what intelligence tests measure" — intervening variable. "Intelligence tests measure intelligence" — hypothetical construct (intelligence is presupposed to exist independently of the test).</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"Explain the distinction between hypothetical constructs and intervening variables, using intelligence as the example."</p>
+          <p class="exam-a"><strong>Model answer:</strong> An intervening variable is an organism variable defined wholly by its measurement operations — for example, "intelligence is what intelligence tests measure" treats intelligence as nothing more than the test's output. A hypothetical construct, by contrast, is hypothesised to exist independently of measurement: "intelligence tests measure intelligence" presupposes that intelligence exists prior to the test, which is therefore an imperfect estimate. The distinction matters because hypothetical constructs have ontological status — they are genuine entities — whereas intervening variables do not.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 39 -->
+    <div class="concept-card" data-search="ontological status existence independent entity hypothetical construct">
+      <div class="concept-card-head"><span class="concept-num">39</span><span class="concept-title">Ontological Status</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">The technical term for the assumption that a hypothetical construct exists as an entity, independently of the procedures used to measure it.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>Where intervening variables have no ontological status (there is nothing there other than the measurement), hypothetical constructs do — there is "something there", though exactly what it is can be disputed. This is the key conceptual upgrade that distinguishes neobehaviourist organism variables from cognitive person variables.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>Memory has ontological status because it is presupposed to exist in the person whether or not we measure it. A psychologist's "drive" defined as hours of food deprivation does not.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"Define ontological status. Why is it important in distinguishing hypothetical constructs from intervening variables?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> Ontological status is the assumption that a construct refers to an entity that exists independently of how we measure it. Hypothetical constructs have ontological status — there is "something there" beyond the measurement procedures. Intervening variables do not — they are mere shorthand for the measurement. The distinction is crucial because cognitive psychology adopts hypothetical constructs (memory, attention, schema) as entities that genuinely exist in the person and influence behaviour.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 40 -->
+    <div class="concept-card" data-search="surplus meaning achievement motivation hypothetical heuristic">
+      <div class="concept-card-head"><span class="concept-num">40</span><span class="concept-title">Surplus Meaning</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">The properties of a hypothetical construct that are not exhausted by what it directly does — additional features that make the construct fertile for generating new predictions.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>An intervening variable is precisely defined by its operations and has no surplus. A hypothetical construct is approximately defined and may motivate things <em>other</em> than its primary effect. Surplus meaning therefore acts as a heuristic — a guide to future research and new empirical predictions.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>If achievement motivation motivates achievement, the surplus meaning is that it may also motivate other achievement-relevant phenomena — writing more stories about achievement, for example.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"What is surplus meaning, and why is it valuable for psychological theorising?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> Surplus meaning refers to the properties of a hypothetical construct that go beyond the construct's directly measured effects. It is valuable because it functions as a heuristic for future research: a construct hypothesised to motivate achievement might be predicted to influence achievement-related phenomena that have not yet been measured. Intervening variables, being precisely and completely defined by their operations, generate no surplus and therefore no new predictions.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 41 -->
+    <div class="concept-card" data-search="person variable cognitive paradigm mental content beliefs attitudes">
+      <div class="concept-card-head"><span class="concept-num">41</span><span class="concept-title">Person Variable</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">The cognitive paradigm's name for a hypothetical construct — an organism variable that is hypothesised to exist in the person and is not merely a summary of external observations.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>The terminological hinge between the chapter's behaviourist and cognitive halves. Where neobehaviourism would have called intelligence an "organism variable", cognitive psychology calls it a "person variable" — and the change of name carries the change of status (ontological, surplus-bearing).</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>Beliefs, attitudes, expectancies, schemas, achievement motives — all are person variables.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"What is a person variable, and how does it differ from a neobehaviourist organism variable?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> A person variable is the cognitive paradigm's term for a hypothetical construct — an entity hypothesised to exist in the person, with ontological status and surplus meaning. It differs from a neobehaviourist organism variable in that the latter is typically operationally defined and treated as an intervening variable: a shorthand for measurement with no independent existence. The person variable thus reintroduces mental content into psychology, but in a way that is consistent with hypothetical-construct logic.</p>
+        </div>
+      </div></div>
+    </div>
+  </div>
+
+  <!-- ───── BRANCH 7 ───── -->
+  <div class="branch" data-branch="7" id="branch-7">
+    <div class="branch-header">
+      <div class="branch-num">07</div>
+      <div class="branch-title-block">
+        <div class="label">Branch Seven</div>
+        <h2>The Cognitive Turn</h2>
+        <p class="branch-bridge">Behaviourism did not collapse — it was overtaken. The Skinner–Chomsky debate is widely (over-)credited with the change. The deeper causes were that behaviourism ran out of steam (a degenerating problem shift on the grand scale), while cultural and technological change — the move from production lines to computers — produced a new set of questions that information-processing theory could answer.</p>
+      </div>
+    </div>
+
+    <p class="transition-prose">The final concepts trace the conditions under which the cognitive paradigm replaced behaviourism: a famous theoretical controversy, two systemic causes, the new vocabulary of "model", and a wider notion of cognition that quietly reabsorbed the question of free will.</p>
+
+    <!-- Concept 42 -->
+    <div class="concept-card" data-search="skinner chomsky debate verbal behavior language acquisition">
+      <div class="concept-card-head"><span class="concept-num">42</span><span class="concept-title">The Skinner–Chomsky Debate</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">A controversy over the explanation of language. Skinner's <em>Verbal Behavior</em> (1957) attempted to account for human language using behavioural principles. Chomsky's 1959 review argued that language depends on an innate language acquisition device.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>Often credited with heralding the demise of behaviourism — though the chapter argues this is almost certainly an oversimplification. Skinner's view was less simplistic than typically caricatured. The deeper problem with Skinner's account was not that it failed to explain language in humans but that it could not explain why other animals, given comparable language exposure (e.g. household dogs), do not develop language.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>Chomsky's challenge: a dog raised in a household with constant linguistic exposure does not learn to speak. If language were merely associative learning, why not?</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"Outline the Skinner–Chomsky debate. How decisive was it for the demise of behaviourism?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> Skinner's <em>Verbal Behavior</em> applied behavioural principles to human language; Chomsky's review argued that language relies on an innate language acquisition device. The debate is widely credited with heralding behaviourism's demise, but this is almost certainly an oversimplification. Skinner's position was more sophisticated than usually portrayed, and the chief difficulty with the behavioural account was not that it failed to explain language in humans but that it could not explain why other species, given similar exposure, did not acquire it. Behaviourism more plausibly declined for systemic reasons — running out of steam and being overtaken by information-processing theory.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 43 -->
+    <div class="concept-card" data-search="running out of steam data driven theory lakatos behaviourism">
+      <div class="concept-card-head"><span class="concept-num">43</span><span class="concept-title">"Running Out of Steam"</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">The chapter's term for the systemic exhaustion of behaviourism: once the behaviour of the rat in T-mazes and Skinner boxes had been thoroughly explored, there was little theoretically left to discover.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>Behaviourism was data-driven (not theory-led). Its principal ideas — classical conditioning, operant conditioning and their extensions — had been worked out. The findings remained correct; they simply ceased to generate new theoretical questions. This is the macro-scale analogue of a degenerating problem shift.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>By the late 1950s, the basic curves of reinforcement schedules had been mapped. Further data added detail rather than insight.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"What is meant by behaviourism 'running out of steam', and why is this relevant to its decline?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> The phrase captures the idea that, by the late 1950s, the principal phenomena studied by behaviourism — classical and operant conditioning in T-mazes and Skinner boxes — had been thoroughly mapped. Because behaviourism was data-driven rather than theory-led, the diminishing return on new findings translated directly into theoretical exhaustion. The remaining behaviourist results stayed valid; they simply stopped generating new questions, and a new paradigm — cognitive psychology, with new questions — took over.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 44 -->
+    <div class="concept-card" data-search="cultural factors production lines computers information age technology">
+      <div class="concept-card-head"><span class="concept-num">44</span><span class="concept-title">Cultural &amp; Technological Factors (Production Lines vs Computers)</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">The argument that paradigms in psychology coincide with the dominant technologies of their time. Behaviourism coincided with factory production lines (simple repetitive movements). Cognitive psychology coincided with the computer (information processing).</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>A surprisingly powerful explanation of why one paradigm replaces another. The questions a paradigm can plausibly ask are constrained by the technological metaphors available. Slot machines, the chapter notes, are still a fine demonstration of variable-ratio reinforcement — but they are not the dominant technology of the modern world.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>The factory worker on a production line performs simple, reinforced repetitive movements — fits the behaviourist frame. The office worker using a computer manipulates information — fits the cognitive frame.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"What role did cultural and technological change play in the decline of behaviourism?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> Behaviourism developed alongside factory production lines, where simple repetitive movements were the dominant form of work — a context in which behaviourist principles applied naturally. The development of computers in the 1950s and 1960s introduced a new metaphor: information processing. Computers store, transform and combine information that cannot be represented in S–R bonds. The new metaphor produced new questions — about memory, problem-solving and attention — which behaviourism could not address, and which became the subject matter of cognitive psychology.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 45 -->
+    <div class="concept-card" data-search="psychological model theory technology metaphor heuristic">
+      <div class="concept-card-head"><span class="concept-num">45</span><span class="concept-title">Psychological Model</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">A theory whose <em>form</em> mirrors that of an external system (typically a piece of technology), even though its <em>content</em> is psychological. A term rarely used before 1950 and central to cognitive psychology.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>A model car has the same form as a real car (four wheels, bonnet, boot) but different content. A psychological model has the same form as some external system — a thermostat, a control system, a digital computer — but the content is psychological. The cognitive paradigm is defined, in part, by its use of technology as a heuristic for theory.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>The control-system model of motivation: goal → decision → motivation → behaviour → environment → sensory input → decision (Figure 4.1). The form is a thermostat; the content is psychological.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"What is meant by 'psychological model', and what role do models play in cognitive psychology?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> A psychological model is a theory whose form mirrors that of an external (often technological) system, while its content concerns psychological phenomena. A control-system model of motivation, for example, has the same structure as a thermostat — feedback loops, error signals, comparators — but the variables are goals, decisions, motivation and behaviour. Models matter because they give cognitive psychology a heuristic for theory construction: technology supplies the form, while psychology supplies the content.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 46 -->
+    <div class="concept-card" data-search="cognitive paradigm formula situation environment person behaviour s-o-r">
+      <div class="concept-card-head"><span class="concept-num">46</span><span class="concept-title">The Cognitive Paradigm Formula (Situation → Person → Behaviour)</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">The cognitive paradigm's reformulation of the neobehaviourist S → O → R, in which Stimulus becomes Situation or Environment, Organism becomes Person, and Response becomes Behaviour.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>The change of names reflects the change of paradigm. "Situation" widens the input beyond a single stimulus; "Person" implies a being with internal states (hypothetical constructs); "Behaviour" widens the output beyond a single response. The structural form is preserved — cognitive psychology builds on rather than supplants behaviourism.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>An exam (situation) → student's anxiety, beliefs about ability, motivation (person variables) → exam performance (behaviour).</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"How is the neobehaviourist formula S → O → R transformed in the cognitive paradigm?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> S → O → R becomes Situation/Environment → Person → Behaviour. Stimulus is generalised to situation, broadening the input. Organism is replaced by Person, signalling that the intervening variables are person variables — hypothetical constructs with ontological status, not just intervening variables. Response is generalised to behaviour, broadening the output. The structural form is retained, illustrating that the cognitive paradigm builds on, rather than discards, the behaviourist framework.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 47 -->
+    <div class="concept-card" data-search="broadbent perception communication 1958 information processing computers cognitive">
+      <div class="concept-card-head"><span class="concept-num">47</span><span class="concept-title">Broadbent's <em>Perception and Communication</em> (1958)</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">A foundational text of cognitive psychology, published before the Skinner–Chomsky debate, that explicitly applied information-processing principles from computers to the analysis of attention, memory and learning.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>The chapter cites Broadbent's chapter titles as evidence of how early the cognitive paradigm was already in motion: "Selective listening to speech," "Immediate memory and the shifting of attention," "The selective nature of learning". The book's pre-1959 publication date supports the chapter's claim that the Skinner–Chomsky debate was not as decisive as commonly thought.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>Broadbent's filter model of attention — a piece of cognitive theory built on a technological (filter) metaphor.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"Why is Broadbent's <em>Perception and Communication</em> (1958) important for the history of the cognitive paradigm?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> Broadbent's book is important for two reasons. First, it explicitly applies computer-style information-processing concepts to attention, memory and learning, supplying the new vocabulary of the cognitive paradigm. Second, its publication date — 1958, before the Skinner–Chomsky exchange — suggests that the cognitive paradigm was already developing on independent grounds. The Skinner–Chomsky debate, often given decisive weight, is therefore better seen as one moment in a wider intellectual transition.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 48 -->
+    <div class="concept-card" data-search="wider cognitive paradigm beliefs attitudes implicit conscious unconscious">
+      <div class="concept-card-head"><span class="concept-num">48</span><span class="concept-title">The Wider Cognitive Paradigm</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">The general use of the term <em>cognitive</em> to describe any explanation that relies on hypothetical constructs or person variables linked in some way to thought — including beliefs, attitudes, expectancies, and implicit cognition.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>Originally tied to thought, memory and reasoning, the term <em>cognitive</em> came to be used more broadly. Beliefs and attitudes are conscious and introspectable, but person variables can also be implicit — accessible to influence behaviour without being available to consciousness. The cognitive paradigm therefore acknowledges Würzburg's evidence (not all behaviour is consciously controlled) while still allowing mental content to do explanatory work.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>Implicit attitudes that influence behaviour without the person being able to report them — a possibility entirely consistent with the wider cognitive paradigm.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"In what sense does the cognitive paradigm 'get the best of both worlds'?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> The cognitive paradigm acknowledges Würzburg-style evidence that not all behaviour is consciously controlled, while still permitting mental content to explain behaviour. It does this by allowing both conscious and introspectable person variables (beliefs, attitudes) and implicit person variables not available to consciousness. The paradigm therefore captures the role of consciousness in some behaviour while not committing to consciousness as the sole or even primary determinant — which is what gives it explanatory range across social, developmental and clinical psychology.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 49 -->
+    <div class="concept-card" data-search="free will determinism science illusion skinner unfalsifiable">
+      <div class="concept-card-head"><span class="concept-num">49</span><span class="concept-title">Free Will, Determinism &amp; the Methodology of Science</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">The chapter's reflective coda. To explain a behaviour, an explanation must include the factors responsible for it — and the methodology of science is one of determinism. The existence of free will is unfalsifiable and therefore outside the realm of science.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>This is the philosophical residue of Skinner's argument. Whether or not behaviour is in fact deterministic, science as a methodology assumes determinism — psychology's silence on free will follows from this methodological commitment, not from a settled metaphysical answer.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>You may experience choosing to read this section as a free choice. Psychology, as a science, will look for the factors that influenced that choice — without thereby claiming that the experience of freedom is wrong.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"Why does psychology generally not address the question of free will?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> To explain a behaviour, an explanation must specify the factors that produced it — and science as a methodology assumes determinism. The existence of free will is unfalsifiable: there is no observation that could demonstrate a behaviour was uncaused. It therefore lies outside the methodological remit of science. Skinner's view that freedom is an illusion is consistent with this methodological position, although a deterministic methodology does not, by itself, settle the metaphysical question of whether free will exists.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <!-- Concept 50 -->
+    <div class="concept-card" data-search="cognitive neuroscience modern paradigms artificial intelligence qualitative">
+      <div class="concept-card-head"><span class="concept-num">50</span><span class="concept-title">Beyond the Cognitive Paradigm — Co-existing Paradigms</span><span class="concept-toggle"></span></div>
+      <div class="concept-card-body"><div class="concept-inner">
+        <div class="concept-block"><span class="lbl">Definition</span><p class="definition">The closing observation that no paradigm in psychology has ever been so dominant that it excluded everything else. Cognitive neuroscience, AI-based paradigms, person-uniqueness paradigms and qualitative paradigms all currently co-exist with the cognitive paradigm.</p></div>
+        <div class="concept-block"><span class="lbl">Explanation</span><p>An important corrective to a tidy succession story. Behaviourism was dominant; cognitive psychology became dominant; cognitive neuroscience now has the highest status. But each newly dominant paradigm has been accompanied by older ones that still produce useful work.</p></div>
+        <div class="concept-block"><span class="lbl">Example</span><p>Cognitive neuroscience studies the biology of cognitive concepts (Chapter 6). The qualitative paradigm operates with very different assumptions (Chapter 9). They are concurrent, not successive.</p></div>
+        <div class="exam-block"><span class="lbl">Exam application</span>
+          <p class="exam-q">"Is the history of psychology a history of paradigm replacement or of paradigm coexistence?"</p>
+          <p class="exam-a"><strong>Model answer:</strong> It is both. The chapter's narrative arc is one of replacement — introspectionism replaced by behaviourism, behaviourism replaced by the cognitive paradigm. But within any given period, multiple paradigms have co-existed, and several continue to do so today: cognitive neuroscience, AI-based approaches, paradigms emphasising the uniqueness of persons and qualitative paradigms. Dominance is therefore a matter of relative status rather than exclusion.</p>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════ MISTAKES ═════════════ -->
+<section id="mistakes">
+  <div class="section-label">§ 2 · Common Student Mistakes</div>
+  <h2 class="section-title">Where students <em>typically</em> go wrong</h2>
+  <p class="section-subtitle">Each card identifies the misconception, explains why it happens, and gives the correct understanding.</p>
+
+  <div class="mistakes-grid">
+
+    <div class="mistake-card">
+      <div class="head"><span class="marker">i.</span><h3>Conflating Watson and Skinner</h3></div>
+      <div class="why"><span class="lbl">Why it happens</span><p>Both reject mental content; both work with rats; both are called behaviourists. Students assume the rationale is the same.</p></div>
+      <div class="correct"><span class="lbl">Correct understanding</span><p>Watson rejected introspection on <em>methodological</em> grounds (it is unreliable). Skinner rejected <em>all</em> theoretical terms — mental and physiological — on <em>philosophical</em> grounds (the paradox of theorising). Watson would accept a physiological explanation; Skinner would not.</p></div>
+    </div>
+
+    <div class="mistake-card">
+      <div class="head"><span class="marker">ii.</span><h3>Reading the law of effect as obvious</h3></div>
+      <div class="why"><span class="lbl">Why it happens</span><p>"Animals do more of what they enjoy" sounds trivial — and the textbook itself jokes about it.</p></div>
+      <div class="correct"><span class="lbl">Correct understanding</span><p>The novelty was not the idea but the framing: psychology now had laws expressed in scientific form. The law also exposes a problem — "satisfaction" is defined circularly, an explanatory fiction. This circularity is exactly what Skinner later avoided by defining reinforcement by its effect on response rate.</p></div>
+    </div>
+
+    <div class="mistake-card">
+      <div class="head"><span class="marker">iii.</span><h3>Assuming Little Albert was a clean demonstration</h3></div>
+      <div class="why"><span class="lbl">Why it happens</span><p>Textbooks repeat the story so often it acquires the status of myth. Furry gloves and teddy bears get added in retellings.</p></div>
+      <div class="correct"><span class="lbl">Correct understanding</span><p>The conditioning effect was weak and required "freshening up". Subsequent retellings invented objects (rug, fur glove, teddy bear) not present in the 1920 paper. Albert's identity is contested. The study would not now obtain ethical approval. It illustrates conditioning <em>and</em> the unreliability of how histories of psychology are constructed.</p></div>
+    </div>
+
+    <div class="mistake-card">
+      <div class="head"><span class="marker">iv.</span><h3>Confusing operational definition with explanation</h3></div>
+      <div class="why"><span class="lbl">Why it happens</span><p>Operational definitions sound rigorous, so students assume they explain. They define.</p></div>
+      <div class="correct"><span class="lbl">Correct understanding</span><p>An operationally defined organism variable is a <em>shorthand summary</em> of external observations — it is an intervening variable, not a hypothetical construct. It does not refer to an entity that exists independently. Hull's "drive" defined as hours of food deprivation is a label, not an entity in the rat's body.</p></div>
+    </div>
+
+    <div class="mistake-card">
+      <div class="head"><span class="marker">v.</span><h3>Treating hypothetical constructs and intervening variables as interchangeable</h3></div>
+      <div class="why"><span class="lbl">Why it happens</span><p>Both are organism variables that intervene between stimulus and response. The terminology suggests overlap.</p></div>
+      <div class="correct"><span class="lbl">Correct understanding</span><p>Intervening variables are exhausted by their measurement; hypothetical constructs are not. Compare "intelligence is what intelligence tests measure" (intervening variable — no surplus, no ontological status) with "intelligence tests measure intelligence" (hypothetical construct — surplus meaning, ontological status). The cognitive paradigm uses the second sense.</p></div>
+    </div>
+
+    <div class="mistake-card">
+      <div class="head"><span class="marker">vi.</span><h3>Believing Chomsky's review killed behaviourism</h3></div>
+      <div class="why"><span class="lbl">Why it happens</span><p>It is a tidy story: Chomsky reviewed <em>Verbal Behavior</em>, behaviourism died.</p></div>
+      <div class="correct"><span class="lbl">Correct understanding</span><p>Skinner's view was less simplistic than usually portrayed. The deeper problem was that animal models could not explain why species given comparable language exposure (e.g. household dogs) did not develop language. Behaviourism's decline owed at least as much to running out of steam and to cultural-technological change as to one famous review.</p></div>
+    </div>
+
+    <div class="mistake-card">
+      <div class="head"><span class="marker">vii.</span><h3>Hearing "molar" and "molecular" as a value judgement</h3></div>
+      <div class="why"><span class="lbl">Why it happens</span><p>"Molar" sounds bigger and therefore better; students conclude Tolman is more sophisticated than Hull.</p></div>
+      <div class="correct"><span class="lbl">Correct understanding</span><p>Molar and molecular are unit-of-analysis choices. Tolman analyses behaviour in terms of acts (goal-defined wholes); Hull analyses it in terms of actions (component movements). Each choice is suited to particular research questions. The historical irony is that Tolman's gestalt-influenced choice anticipated cognitive psychology, but that does not make Hull's atomism wrong in principle — it lost on tractability.</p></div>
+    </div>
+
+    <div class="mistake-card">
+      <div class="head"><span class="marker">viii.</span><h3>Treating "model" as a synonym for "diagram"</h3></div>
+      <div class="why"><span class="lbl">Why it happens</span><p>Cognitive psychology is full of box-and-arrow diagrams labelled "models".</p></div>
+      <div class="correct"><span class="lbl">Correct understanding</span><p>A psychological model is a theory whose <em>form</em> mirrors that of an external system (often technological), while its <em>content</em> is psychological. The control-system model of motivation has the form of a thermostat but the content of motivation. The technology supplies a heuristic; the psychology supplies the actual phenomena.</p></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═════════════ TABLES ═════════════ -->
+<section id="tables">
+  <div class="section-label">§ 3 · Quick Reference Tables</div>
+  <h2 class="section-title">Spatial summaries</h2>
+  <p class="section-subtitle">Each table compresses a high-yield comparison from the chapter.</p>
+
+  <div class="table-wrap">
+    <h3>Table 1 — The three forms of behaviourism</h3>
+    <p class="table-sub">Methodological vs Radical vs Neobehaviourist — what each allows, why, and on what grounds</p>
+    <table class="qref">
+      <thead>
+        <tr><th>Form</th><th>Key figure</th><th>Allows organism variables?</th><th>Rationale for rejection / acceptance</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="col-marker" style="background:var(--b3)"></span>Methodological</td><td>Watson</td><td>Mental: no. Physiological: in principle yes.</td><td>Methodological: introspection is unreliable.</td></tr>
+        <tr><td><span class="col-marker" style="background:var(--b4)"></span>Radical</td><td>Skinner</td><td>None — neither mental nor physiological.</td><td>Philosophical: the paradox of theorising. Theoretical terms are redundant once S–R links are established.</td></tr>
+        <tr><td><span class="col-marker" style="background:var(--b5)"></span>Neobehaviourist</td><td>Hull, Tolman</td><td>Yes, if operationally defined.</td><td>Practical: strict S–R is unwieldy when prior history matters. Operational definition keeps science honest.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <h3>Table 2 — Hull vs Tolman</h3>
+    <p class="table-sub">Two neobehaviourists, two strikingly different theoretical orientations</p>
+    <table class="qref">
+      <thead>
+        <tr><th>Dimension</th><th>Hull (atomistic)</th><th>Tolman (molar)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Unit of analysis</td><td>Action (small movement)</td><td>Act (goal-defined whole)</td></tr>
+        <tr><td>Theoretical structure</td><td>Atomistic, additive (sER = D × H + K + W…)</td><td>Holistic, purposive</td></tr>
+        <tr><td>Type of bond</td><td>S–R</td><td>S–S (cognitive map)</td></tr>
+        <tr><td>Nature of learning</td><td>Incremental, gradual reinforcement</td><td>All-or-nothing, insight-like</td></tr>
+        <tr><td>Theoretical lineage</td><td>Wundtian associationism</td><td>Gestalt psychology (Koffka, Lewin, Köhler)</td></tr>
+        <tr><td>Rats used</td><td>Selectively bred to be unemotional</td><td>Closer to wild rats — emotional, hesitant</td></tr>
+        <tr><td>Anticipates cognitive psychology?</td><td>Not really</td><td>Yes — explicitly (e.g. cognitive map)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <h3>Table 3 — Hypothetical construct vs intervening variable</h3>
+    <p class="table-sub">The 1948 distinction (MacCorquodale &amp; Meehl) that paved the way for cognitive psychology</p>
+    <table class="qref">
+      <thead>
+        <tr><th>Property</th><th>Intervening variable</th><th>Hypothetical construct</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Definition</td><td>Operational — entirely by measurement procedures</td><td>Approximate — by what it does, but not exhausted by that</td></tr>
+        <tr><td>Ontological status</td><td>None — just shorthand for measurement</td><td>Yes — assumed to exist as an entity</td></tr>
+        <tr><td>Surplus meaning</td><td>None</td><td>Yes — properties beyond direct measurement; heuristic for new predictions</td></tr>
+        <tr><td>Measurement</td><td>Precise (concept defined by it)</td><td>Approximate (concept exists independently of any one measurement)</td></tr>
+        <tr><td>Example formulation</td><td>"Intelligence is what intelligence tests measure"</td><td>"Intelligence tests measure intelligence"</td></tr>
+        <tr><td>Used by</td><td>Neobehaviourists (Hull, Tolman, originally)</td><td>Cognitive psychologists (person variables)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <h3>Table 4 — Behaviourist vs cognitive paradigm</h3>
+    <p class="table-sub">Two paradigms, three differences</p>
+    <table class="qref">
+      <thead>
+        <tr><th>Dimension</th><th>Behaviourist</th><th>Cognitive</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>What does it explain?</td><td>Behaviours humans share with rats</td><td>Behaviours specific to humans (memory, reasoning, language)</td></tr>
+        <tr><td>What kind of theoretical term?</td><td>None (radical) or operationally defined intervening variables (neobehaviourist)</td><td>Hypothetical constructs / person variables with ontological status</td></tr>
+        <tr><td>Formula</td><td>S → R or S → O → R</td><td>Situation/Environment → Person → Behaviour</td></tr>
+        <tr><td>Coincides with</td><td>Factory production lines (simple repetitive movement)</td><td>Computers (information processing)</td></tr>
+        <tr><td>Type of question asked</td><td>How does the environment shape behaviour?</td><td>How does the person process information?</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-wrap">
+    <h3>Table 5 — Failures of introspection at a glance</h3>
+    <p class="table-sub">Three Würzburg studies + the imageless thought controversy = the case for change</p>
+    <table class="qref">
+      <thead>
+        <tr><th>Study / phenomenon</th><th>Researcher</th><th>Finding</th><th>Implication</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="col-marker" style="background:var(--b1)"></span>Weight judgement (1901)</td><td>Marbe</td><td>People can compare weights but cannot introspect how</td><td>Judgement is opaque to introspection</td></tr>
+        <tr><td><span class="col-marker" style="background:var(--b1)"></span>Object naming (1913)</td><td>Watt</td><td>Names appear without conscious thought</td><td>Naming is opaque to introspection</td></tr>
+        <tr><td><span class="col-marker" style="background:var(--b1)"></span>Determining tendency</td><td>Ach</td><td>Goal-directed behaviour without prior conscious intention</td><td>Volition is opaque to introspection</td></tr>
+        <tr><td><span class="col-marker" style="background:var(--b1)"></span>Imageless thought controversy</td><td>Bühler / Woodworth vs Wundt / Titchener</td><td>Different labs, opposite results, never resolved</td><td>Introspection fails replicability</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═════════════ CHECKLIST ═════════════ -->
+<section id="checklist">
+  <div class="section-label">§ 4 · Final Exam Preparation Checklist</div>
+  <h2 class="section-title">Before the exam</h2>
+  <p class="section-subtitle">Tick each item when you can do it without notes. State of preparation is saved as you click.</p>
+
+  <div class="checklist-wrap">
+    <h3>Final Exam Preparation Checklist</h3>
+    <div class="sub">All items below correspond to high-yield exam content. Click to mark complete.</div>
+
+    <div class="check-group">
+      <h4>Branch 1 · The Failure of Introspection</h4>
+      <ul class="check-list">
+        <li>I can state two reasons introspection was rejected (scope failure + replicability failure).</li>
+        <li>I can describe Marbe's, Watt's, and Ach's studies in one sentence each.</li>
+        <li>I can define "determining tendency" with an everyday example.</li>
+        <li>I can explain what the imageless thought controversy was and why it failed the criterion of replicability.</li>
+      </ul>
+    </div>
+
+    <div class="check-group">
+      <h4>Branch 2 · Foundations of Behaviourism</h4>
+      <ul class="check-list">
+        <li>I can state Thorndike's law of effect and law of exercise from memory.</li>
+        <li>I can explain why "satisfaction" in the law of effect is circular.</li>
+        <li>I can describe spontaneous alternation and reactive inhibition.</li>
+        <li>I can describe Pavlov's classical conditioning paradigm using UCS, UCR, CS, CR.</li>
+      </ul>
+    </div>
+
+    <div class="check-group">
+      <h4>Branch 3 · Methodological Behaviourism</h4>
+      <ul class="check-list">
+        <li>I can recite the opening of Watson's 1913 paper from memory or near-memory.</li>
+        <li>I can define methodological behaviourism and explain why it is called methodological.</li>
+        <li>I can describe the Little Albert study and identify two limitations / problems.</li>
+        <li>I can summarise Watson's child-rearing recommendations and the modern verdict on them.</li>
+        <li>I can quote or paraphrase Watson's "dozen healthy infants" claim.</li>
+      </ul>
+    </div>
+
+    <div class="check-group">
+      <h4>Branch 4 · Radical Behaviourism</h4>
+      <ul class="check-list">
+        <li>I can distinguish observation terms from theoretical terms.</li>
+        <li>I can state Hempel's paradox of theorising and apply it to S → O → R.</li>
+        <li>I can explain "explanatory fiction" with an original example.</li>
+        <li>I can distinguish operant from respondent (classical) conditioning.</li>
+        <li>I can describe the Skinner box and three of Skinner's applied inventions.</li>
+        <li>I can summarise Skinner's argument that freedom is an illusion.</li>
+      </ul>
+    </div>
+
+    <div class="check-group">
+      <h4>Branch 5 · Neobehaviourism</h4>
+      <ul class="check-list">
+        <li>I can define "operational definition" with two examples.</li>
+        <li>I can write out Hull's basic equation sER = D × H and explain each term.</li>
+        <li>I can explain why Hull's atomistic theorising created an unwieldy theory.</li>
+        <li>I can apply Lakatos's "degenerating problem shift" to Hull.</li>
+        <li>I can distinguish acts from actions, S–S from S–R, and all-or-nothing from incremental learning.</li>
+        <li>I can explain why Tolman is treated as a transition figure to cognitive psychology.</li>
+        <li>I can give the rat-strain explanation for Hull's and Tolman's different empirical findings.</li>
+      </ul>
+    </div>
+
+    <div class="check-group">
+      <h4>Branch 6 · Hypothetical Constructs &amp; Intervening Variables</h4>
+      <ul class="check-list">
+        <li>I can state the MacCorquodale &amp; Meehl (1948) distinction.</li>
+        <li>I can apply the distinction to intelligence in both formulations.</li>
+        <li>I can define ontological status and surplus meaning.</li>
+        <li>I can explain why the distinction matters for the rise of cognitive psychology.</li>
+      </ul>
+    </div>
+
+    <div class="check-group">
+      <h4>Branch 7 · The Cognitive Turn</h4>
+      <ul class="check-list">
+        <li>I can summarise the Skinner–Chomsky debate and explain the chapter's view that it has been overstated.</li>
+        <li>I can give two systemic reasons (running out of steam + cultural-technological change) for behaviourism's decline.</li>
+        <li>I can transform S → O → R into the cognitive paradigm formula.</li>
+        <li>I can define a "psychological model" and give an example.</li>
+        <li>I can explain why psychology generally remains silent on free will.</li>
+        <li>I can name three paradigms that currently coexist with the cognitive paradigm.</li>
+      </ul>
+    </div>
+
+    <div class="check-group">
+      <h4>Cross-cutting essay competencies</h4>
+      <ul class="check-list">
+        <li>I can <em>compare and contrast</em> methodological, radical and neobehaviourism (Essay Q3).</li>
+        <li>I can <em>explain how intelligence can be treated either as a hypothetical construct or as an intervening variable</em> (Essay Q4).</li>
+        <li>I can <em>argue for or against living in a positive-reinforcement utopia</em> with reference to Walden Two and Brave New World (Essay Q9).</li>
+        <li>I can <em>discuss the practical relevance</em> of reinforcement principles to advertising, gambling and modern life (Essay Q7).</li>
+        <li>I can write a one-paragraph answer to "Why did cognitive psychology arise, and how does it differ from behaviourism?" without reference to notes (Essay Q6).</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  Chapter 4 — How do you explain and control behaviour? · Study Platform · Built for visual learners
+</footer>
+
+<script>
+// ───────── COLLAPSIBLE CONCEPT CARDS ─────────
+document.querySelectorAll('.concept-card-head').forEach(head => {
+  head.addEventListener('click', () => {
+    head.parentElement.classList.toggle('open');
+  });
+});
+
+// ───────── BRANCH FILTER ─────────
+const filterPills = document.querySelectorAll('.filter-pill');
+const branches = document.querySelectorAll('.branch');
+filterPills.forEach(pill => {
+  pill.addEventListener('click', () => {
+    filterPills.forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+    const target = pill.dataset.branch;
+    branches.forEach(b => {
+      if (target === 'all' || b.dataset.branch === target) {
+        b.style.display = '';
+      } else {
+        b.style.display = 'none';
+      }
+    });
+    // Smooth scroll to top of concepts when filtering
+    if (target !== 'all') {
+      document.getElementById('branch-' + target).scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// ───────── LIVE SEARCH ─────────
+const searchBox = document.getElementById('searchBox');
+const allCards = document.querySelectorAll('.concept-card');
+searchBox.addEventListener('input', () => {
+  const q = searchBox.value.trim().toLowerCase();
+  if (!q) {
+    allCards.forEach(c => c.classList.remove('search-hidden'));
+    branches.forEach(b => { if (b.style.display === 'none' && document.querySelector('.filter-pill.active').dataset.branch === 'all') b.style.display = ''; });
+    return;
+  }
+  allCards.forEach(card => {
+    const haystack = (card.dataset.search || '') + ' ' + card.innerText.toLowerCase();
+    card.classList.toggle('search-hidden', !haystack.toLowerCase().includes(q));
+  });
+  // Show all branches that have at least one visible card
+  branches.forEach(b => {
+    const visible = b.querySelectorAll('.concept-card:not(.search-hidden)');
+    b.style.display = visible.length ? '' : 'none';
+  });
+});
+
+// ───────── CHECKLIST PERSISTENCE (in-memory only — session) ─────────
+document.querySelectorAll('.check-list li').forEach(li => {
+  li.addEventListener('click', () => li.classList.toggle('checked'));
+});
+</script>
+
+</body>
+</html>
